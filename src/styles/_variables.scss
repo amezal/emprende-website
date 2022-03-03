@@ -1,0 +1,19 @@
+$bg-primary: #2c313c;
+$bg-secondary: #1e2227;
+$fc-primary: aliceblue;
+$fc-secondary: #403c3c;
+$btn-bg: lightblue;
+
+@mixin cta-button {
+  border-radius: 100px;
+  background-color: $btn-bg;
+  font-weight:400;
+  color: $fc-secondary;
+  transition:all 100ms ease-out;
+  cursor:pointer;
+  &:hover{
+    background-color:lighten($btn-bg,2%);
+    transform:translateY(-1px);
+    box-shadow: darken($btn-bg, 20%) 0px 6px 10px -6px;
+  }
+}

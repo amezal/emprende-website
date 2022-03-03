@@ -1,0 +1,20 @@
+@use './variables' as *;
+
+.footer{
+  display:flex;
+  flex-direction:row;
+  background-color: $bg-secondary;
+
+  &__left{
+    button{
+      @include cta-button;
+      font-size:1.25rem;
+      padding: 0.5em 4.4em
+    }
+  }
+
+  &__right{
+
+  }
+  
+}
