@@ -1,12 +1,12 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-const SobreNosotros = () => {
+const FormaParte = () => {
   return (
     <Layout>
-      <main>SobreNosotros</main>
+      <main>FormarParte</main>
     </Layout>
   )
 }
 
-export default SobreNosotros;
+export default FormaParte;

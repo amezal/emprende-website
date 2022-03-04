@@ -17,3 +17,17 @@ $btn-bg: lightblue;
     box-shadow: darken($btn-bg, 20%) 0px 6px 10px -6px;
   }
 }
+
+@mixin row($jc, $ai) {
+  display:flex;
+  flex-direction:row;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin col($jc, $ai) {
+  display:flex;
+  flex-direction:column;
+  justify-content: $jc;
+  align-items: $ai;
+}

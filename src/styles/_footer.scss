@@ -1,20 +1,51 @@
 @use './variables' as *;
 
 .footer{
-  display:flex;
-  flex-direction:row;
   background-color: $bg-secondary;
 
   &__left{
+    margin-bottom: 5.4rem;
+    
+    img {
+      border-radius:15px;
+      margin-top: 5.4rem;
+    }
+
+    h3{
+      line-height: 1.25;
+      font-size: 2.25rem;
+      margin-top:2rem;
+    }
+
     button{
       @include cta-button;
       font-size:1.25rem;
-      padding: 0.5em 4.4em
+      padding: 0.5em 4.4em;
+      margin-top: 2.2rem;
     }
   }
 
   &__right{
+    @include col(center, flex-end);
+    align-self:flex-end;
+    margin-bottom: 5.4rem;
 
+    a{
+      font-size: 1.55rem;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-bottom:1.4rem;
+    }
+    
+    &__socials{
+      @include row(center, center);
+      gap: 1.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    p, b {
+      font-size: 1.125rem;
+    }    
   }
-  
+
 }

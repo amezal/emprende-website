@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Layout from '../components/Layout';
 
 const Contacto = () => {
   return (
-    <div>Contacto</div>
+    <Layout>
+      <main>Contacto</main>
+    </Layout>
   )
 }
 
-export default Contacto
+export default Contacto;

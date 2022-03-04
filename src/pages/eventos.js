@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Layout from '../components/Layout';
 
 const Eventos = () => {
   return (
-    <div>Eventos</div>
+    <Layout>
+      <main>Eventos</main>
+    </Layout>
   )
 }
 
-export default Eventos
+export default Eventos;
