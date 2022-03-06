@@ -4,13 +4,15 @@ $fc-primary: aliceblue;
 $fc-secondary: #403c3c;
 $btn-bg: lightblue;
 
-@mixin cta-button {
+@mixin cta-button($padding) {
   border-radius: 100px;
   background-color: $btn-bg;
   font-weight:400;
   color: $fc-secondary;
-  transition:all 100ms ease-out;
+  padding: $padding;
   cursor:pointer;
+
+  transition:all 100ms ease-out;
   &:hover{
     background-color:lighten($btn-bg,2%);
     transform:translateY(-1px);

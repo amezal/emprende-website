@@ -1,5 +1,24 @@
 @use '../variables' as *;
 
 .hero{
-  background-color:$bg-secondary;
+  .container{
+    padding-left: 10.3rem;
+    padding-top: 24vh;
+    justify-content:flex-start;
+    align-items: flex-start;
+    h1{
+      font-size: 4.375rem;
+      font-weight:400;
+      line-height:85px;
+      margin-bottom:10vh;
+    }
+
+    button{
+      @include cta-button(0.4em 4.4em);
+      font-size:1.625rem;
+      margin-bottom:20vh;
+    }
+
+  }
+
 }

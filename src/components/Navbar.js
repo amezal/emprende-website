@@ -11,8 +11,8 @@ const Navbar = () => {
         <Link to="/sobre-nosotros">Sobre nosotros</Link>
         <Link to="/aliados">Aliados</Link>
         <Link to="/eventos">Eventos</Link>
-        <Link to="/formar-parte">Forma parte</Link>
-        <button onClick={() => navigate('/contacto')}>Contáctanos</button>
+        <Link to="/forma-parte">Forma parte</Link>
+        <button onClick={() => navigate('/contacto')}>Contactanos</button>
       </div>
     </nav>
   )

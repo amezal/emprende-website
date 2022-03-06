@@ -19,7 +19,14 @@ a {
   color: unset;
 }
 
+
 .container {
+  @include col(flex-start, center);
+  max-width: 1500px;
+  margin: auto;
+}
+
+nav .container, footer .container {
   @include row(space-evenly, center);
   max-width: 1500px;
   margin: auto;

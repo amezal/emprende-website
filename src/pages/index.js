@@ -5,19 +5,15 @@ import 'sanitize.css/typography.css';
 import '../styles/style.scss';
 
 import Layout from '../components/Layout';
+import Hero from '../components/home/Hero';
+import NuestroImpacto from '../components/home/NuestroImpacto';
+
 
 const HomePage = () => {
   return (
     <Layout>
-      <section className="hero">
-        <h1>Hero</h1>
-        <h1>Hero</h1>
-
-      </section>
-      <section>
-        <h1>Nuestro impacto</h1>
-        <h1>Nuestro impacto</h1>
-      </section>
+      <Hero />
+      <NuestroImpacto />
     </Layout>
   )
 }

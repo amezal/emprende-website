@@ -1,0 +1,59 @@
+@use '../variables' as *;
+
+.nuestro-impacto{
+  padding-top:10.5rem;
+
+  h2{
+    font-size:3.5rem;
+    font-weight:400;
+    margin-bottom:6rem;
+  }
+
+  &__stats{
+    @include row(space-evenly, center);
+    width:100%;
+    margin-bottom: 30vh;
+  }
+
+  &__stat{
+    @include col(center,center);
+    width:25%;
+
+    h3{
+      font-weight: 700;
+      font-size: 7.5rem;
+    }
+
+    p{
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    &--completed::before{
+      content: "";
+      position: absolute;
+      width: 25%;
+      height: 50%;
+      // background-color: $bg-secondary;
+
+      background: $bg-secondary;
+      // background: radial-gradient(circle, $bg-secondary 50%, rgba($bg-secondary, 0.3) 100%);
+      border-radius: 50%;
+      z-index: -1;
+      animation: ripple 1.5s ease-out forwards;
+      animation-delay:0s;
+    }
+
+    @keyframes ripple {
+      from {
+        opacity: 0.8;
+        transform: scale(0);
+      }
+      to {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+}
