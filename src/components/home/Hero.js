@@ -1,18 +1,27 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
 
 const Hero = () => {
   const data = useStaticQuery(
     graphql`
       query{
-        allWpMediaItem {
+        allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Hero"}}}}}) {
           nodes {
-            localFile {
-              childImageSharp {
-                fluid(quality: 90, maxWidth: 1920) {
-                  ...GatsbyImageSharpFluid_withWebp
-                  originalName
+            title
+            content
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920, 
+                      placeholder: BLURRED, 
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
                 }
               }
             }
@@ -22,17 +31,23 @@ const Hero = () => {
     `
   );
 
-  const imageData = data.allWpMediaItem.nodes[0].localFile.childImageSharp.fluid;
-
+  const image = getImage(data.allWpPost.nodes[0].featuredImage.node.localFile)
+  const bgImage = convertToBgImage(image);
+  const h1 = data.allWpPost.nodes[0].content;
+  const cta = data.allWpPost.nodes[0].title;
+  console.log(h1);
   return (
     <BackgroundImage
       Tag="section"
       className="hero"
-      fluid={imageData}
+      {...bgImage}
+      preserveStackingContext
     >
-      <div className="container">
-        <h1>Promoviendo el <br /> talento local</h1>
-        <button>Button</button>
+      <div className="container" dangerouslySetInnerHTML={{
+        __html: `
+        ${h1}
+        <button>${cta}</button>
+        `}}>
       </div>
     </BackgroundImage>
   )
