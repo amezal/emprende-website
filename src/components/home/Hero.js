@@ -1,8 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
-import BackgroundImage from 'gatsby-background-image';
+import Carousel from './Carousel';
 
 const Hero = () => {
   const data = useStaticQuery(
@@ -20,6 +18,7 @@ const Hero = () => {
                       width: 1920, 
                       placeholder: BLURRED, 
                       formats: [AUTO, WEBP, AVIF]
+                      blurredOptions:{width:100}
                     )
                   }
                 }
@@ -31,25 +30,11 @@ const Hero = () => {
     `
   );
 
-  const image = getImage(data.allWpPost.nodes[0].featuredImage.node.localFile)
-  const bgImage = convertToBgImage(image);
-  const h1 = data.allWpPost.nodes[0].content;
-  const cta = data.allWpPost.nodes[0].title;
-  console.log(h1);
+  const heros = data.allWpPost.nodes;
   return (
-    <BackgroundImage
-      Tag="section"
-      className="hero"
-      {...bgImage}
-      preserveStackingContext
-    >
-      <div className="container" dangerouslySetInnerHTML={{
-        __html: `
-        ${h1}
-        <button>${cta}</button>
-        `}}>
-      </div>
-    </BackgroundImage>
+    <section className="hero">
+      <Carousel className="hero__carousel" data={heros} />
+    </section>
   )
 
 }

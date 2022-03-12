@@ -1,24 +1,77 @@
 @use '../variables' as *;
 
+$controls-color: rgb(121,121,121);
+
 .hero{
-  .container{
-    padding-left: 10.3rem;
-    padding-top: 24vh;
-    justify-content:flex-start;
-    align-items: flex-start;
-    h1{
-      font-size: 4.375rem;
-      font-weight:400;
-      line-height:85px;
-      margin-bottom:10vh;
-    }
+  .controls{
+    @include col(center, center);
+    position:absolute;
+    right:2vw;
+    top:60%;
+    z-index:2;
+    gap:0.5rem;
 
     button{
-      @include cta-button(0.4em 4.4em);
-      font-size:1.625rem;
-      margin-bottom:20vh;
+      cursor:pointer;
+      &__slider:hover, &__slider:active{
+        background:$controls-color;
+      }
+    }
+    &__next, &__prev {
+      border: none;
+      color: $controls-color;
+      size:2rem;
+    }
+    &__slider{
+      width:0.7rem;
+      height:0.7rem;
+      background:transparent;
+      border-radius:100%;
+      border:2px solid $controls-color;
+      &--current, &:hover{
+        width:0.7rem;
+        height:0.7rem;
+        background:$controls-color;
+        border:2px solid $controls-color;
+        border-radius:100%;
+      }
+
+    }
+    
+  }
+
+  &__carousel{
+    max-height:90vh;
+    overflow:hidden;
+    position:relative;
+    
+    .container{
+      padding-left: 10.3rem;
+      padding-top: 24vh;
+      justify-content:flex-start;
+      align-items: flex-start;
     }
 
+    &__smooth{
+      scroll-behavior: smooth;
+    }
+
+    &__content{
+      min-height:90vh;
+      h1{
+        font-size: 4.375rem;
+        font-weight:400;
+        line-height:85px;
+        margin-bottom:10vh;
+      }
+    
+      button{
+        @include cta-button(0.4em 4.4em);
+        font-size:1.625rem;
+        // margin-bottom:20vh;
+      }
+    }
   }
+ 
 
 }
