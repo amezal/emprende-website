@@ -17,20 +17,16 @@ $controls-color: rgb(121,121,121);
         background:$controls-color;
       }
     }
-    &__next, &__prev {
-      border: none;
-      color: $controls-color;
-      size:2rem;
-    }
+
     &__slider{
-      width:0.7rem;
-      height:0.7rem;
+      width:0.8rem;
+      height:0.8rem;
       background:transparent;
       border-radius:100%;
       border:2px solid $controls-color;
       &--current, &:hover{
-        width:0.7rem;
-        height:0.7rem;
+        width:0.8rem;
+        height:0.8rem;
         background:$controls-color;
         border:2px solid $controls-color;
         border-radius:100%;
@@ -41,10 +37,11 @@ $controls-color: rgb(121,121,121);
   }
 
   &__carousel{
-    max-height:90vh;
-    overflow:hidden;
+    width:100%;
+    overflow-x:hidden;
     position:relative;
-    
+    @include row(stretch, center);
+
     .container{
       padding-left: 10.3rem;
       padding-top: 24vh;
@@ -56,6 +53,10 @@ $controls-color: rgb(121,121,121);
       scroll-behavior: smooth;
     }
 
+    &__bg {
+      min-width:100%;
+    }
+
     &__content{
       min-height:90vh;
       h1{
@@ -63,12 +64,31 @@ $controls-color: rgb(121,121,121);
         font-weight:400;
         line-height:85px;
         margin-bottom:10vh;
+
+        transform: translateY(-3rem);
+        opacity: 0;
+        transition: all 1.2s ease-in;
       }
-    
+      
       button{
         @include cta-button(0.4em 4.4em);
         font-size:1.625rem;
-        // margin-bottom:20vh;
+        transform: translateY(-4rem);
+        opacity: 0;
+        transition: all 1.4s ease-in;
+      }
+      
+      &--current{
+        h1 {
+          transition: all 1.2s ease-in-out;
+          transform: translateY(0);
+          opacity: 1;
+        }
+        button {
+          transition: all 1.4s ease-in-out;
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
     }
   }

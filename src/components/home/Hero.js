@@ -6,7 +6,10 @@ const Hero = () => {
   const data = useStaticQuery(
     graphql`
       query{
-        allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Hero"}}}}}) {
+        allWpPost(
+          filter: {categories: {nodes: {elemMatch: {name: {eq: "Hero"}}}}}
+          sort: {fields: modified, order: ASC}
+          ) {
           nodes {
             title
             content
@@ -33,7 +36,7 @@ const Hero = () => {
   const heros = data.allWpPost.nodes;
   return (
     <section className="hero">
-      <Carousel className="hero__carousel" data={heros} />
+      <Carousel data={heros} />
     </section>
   )
 

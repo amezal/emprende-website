@@ -2,9 +2,8 @@ import React, { useState, useRef, useEffect } from 'react'
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-const Carousel = ({ children, className, data }) => {
+const Carousel = ({ data }) => {
 
   const [heros, setHeros] = useState(data.map(hero => {
     const image = getImage(hero.featuredImage.node.localFile);
@@ -20,18 +19,21 @@ const Carousel = ({ children, className, data }) => {
   const [carouselRef, setCarouselRef] = useState(null);
   const myRef = useRef(null);
 
+  //autoplay
   useEffect(() => {
-    const id = setInterval(nextSlide, 4000);
+    const id = setInterval(nextSlide, 7000);
     return () => clearInterval(id);
   })
 
   useEffect(() => {
     if (myRef.current) {
       setCarouselRef(myRef.current);
+      //Copy last hero item to the start of the array so it can loop around
       const last = heros[heros.length - 1];
       const arr = [last, ...heros];
       setHeros(arr);
-      myRef.current.scrollTop = myRef.current.children[1].getBoundingClientRect().height;
+      //Scroll to the first hero item (index 1 in array)
+      myRef.current.scrollLeft = myRef.current.children[0].getBoundingClientRect().width;
     }
   }, [myRef])
 
@@ -39,53 +41,41 @@ const Carousel = ({ children, className, data }) => {
   const nextSlide = () => {
     let next = current + 1;
     const child = carouselRef.children[0].getBoundingClientRect();
-    if (next + 1 > heros.length - 1) {
-      carouselRef.scrollTo({ top: child.height * (current - 1), behavior: 'instant' });
-      const newHeros = [...heros, heros[current - (data.length % 2)]];
-      newHeros.shift();
-      setHeros(newHeros);
-      next = current;
+
+    /*Scroll instantly to the copied item when it gets
+    to the last item, so the loop is seamless */
+
+    if (next > heros.length - 1) {
+      carouselRef.scrollTo({ left: 0, behavior: 'instant' });
+      next = 1;
     }
-    carouselRef.scrollTo({ top: child.height * next, behavior: 'smooth' });
+
+    /* Scroll smoothly to the next item in the carousel */
+    carouselRef.scrollTo({ left: child.width * next, behavior: 'smooth' });
     setCurrent(next);
   }
 
-  const prevSlide = () => {
-    let prev = current - 1;
+  const goToSlide = (i) => {
     const child = carouselRef.children[0].getBoundingClientRect();
-    if (prev - 1 < 0) {
-      carouselRef.scrollTo({ top: child.height * (current + 1), behavior: 'instant' });
-      const newHeros = [heros[current + (data.length % 2)], ...heros];
-      newHeros.pop();
-      setHeros(newHeros);
-      prev = current;
-    }
-    carouselRef.scrollTo({ top: child.height * prev, behavior: 'smooth' });
-    setCurrent(prev);
-  }
-
-  const goToSlide = (title) => {
-    const i = heros.findIndex(hero => (
-      hero.cta === title
-    ))
-    setCurrent(i);
-    const child = carouselRef.children[0].getBoundingClientRect();
-    carouselRef.scrollTo({ top: child.height * i, behavior: 'smooth' });
+    /* Since an item was shifted into the start of the array, we skip 1 index */
+    carouselRef.scrollTo({ left: child.width * (i + 1), behavior: 'smooth' });
+    setCurrent(i + 1);
   }
 
   return (
     <>
-      <div className={`${className} ${carouselRef && `${className}__smooth`}`} ref={myRef}>
+      <div className={`hero__carousel ${carouselRef && `hero__carousel__smooth`}`} ref={myRef}>
         {heros.map((hero, i) => (
           <BackgroundImage
             Tag="div"
-            className={`${className}__bg`}
+            className={`hero__carousel__bg`}
             {...hero.img}
             id={hero.cta + i}
             key={hero.cta + i}
             preserveStackingContext
           >
-            <div className={`container ${className}__content`}>
+            <div className={`container hero__carousel__content 
+            ${`hero__carousel__content${current === i ? '--current' : ''}`}`}>
               <span dangerouslySetInnerHTML={{ __html: `${hero.h1}` }}></span>
               <button>{hero.cta}</button>
             </div>
@@ -94,15 +84,13 @@ const Carousel = ({ children, className, data }) => {
       </div>
 
       <div className="controls">
-        <button className="controls__prev" onClick={prevSlide}><FaChevronUp size="1.5rem" /></button>
         {data.map((hero, i) => (
-          <button onClick={() => goToSlide(hero.title)}
+          <button onClick={() => goToSlide(i)}
             key={i}
-            className={`controls__slider${hero.title === heros[current].cta ? '--current' : ''}`}
+            className={`controls__slider${i + 1 === current ? '--current' : ''}`}
           >
           </button>
         ))}
-        <button className="controls__next" onClick={nextSlide}><FaChevronDown size="1.5rem" /></button>
       </div>
     </>
   )
