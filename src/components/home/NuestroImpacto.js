@@ -91,6 +91,12 @@ const NuestroImpacto = () => {
             <p>Lorem ipsum dolor sit <br />amet, consectetur <br />adipiscing elit, sed do <br />eiusmod.</p>
           </div>
         </div>
+
+        <iframe width="1350" height="770" src="https://www.youtube.com/embed/Scg6uHLQ0GI"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowfullscreen>
+        </iframe>
       </div>
     </section >
   )
