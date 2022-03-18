@@ -6,7 +6,7 @@
   
   &__carousel{
     @include row(stretch, center);
-    overflow-x:scroll;
+    overflow-x:hidden;
     padding-top:80px;
     mask-image: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.1) 100%);
     scroll-snap-type: x mandatory;
@@ -22,7 +22,7 @@
     @include col(center, center);
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
     border-radius: 34px;
-    min-width:90ch;
+    min-width:60vw;
     background-color:#232332;
     position:relative;
     padding-bottom: 5rem;
@@ -31,9 +31,8 @@
 
     &__img{
       border-radius:100%;
-      position:absolute;
+      position:absolute !important;
       top:-80px;
-      z-index:2;
     }
     &__stars{
       @include row(center,center);

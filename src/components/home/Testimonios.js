@@ -34,7 +34,7 @@ const Testimonios = () => {
     },
     {
       title: 'Viña Mía',
-      img: images[1].gatsbyImageData,
+      img: images[2].gatsbyImageData,
       stars: 4,
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing
       elit, sed do eiusmod tempor incididunt ut labore et
@@ -44,7 +44,7 @@ const Testimonios = () => {
     },
     {
       title: 'Buñuelitos',
-      img: images[2].gatsbyImageData,
+      img: images[1].gatsbyImageData,
       stars: 5,
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing
       elit, sed do eiusmod tempor incididunt ut labore et
