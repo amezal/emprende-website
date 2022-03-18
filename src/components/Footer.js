@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image';
 import { FaInstagram, FaFacebookSquare, FaTiktok, FaYoutube } from 'react-icons/fa';
 
 
 const Footer = () => {
-
-  const socials = [FaInstagram, FaFacebookSquare, FaTiktok, FaYoutube];
 
   return (
     <footer className="footer">
