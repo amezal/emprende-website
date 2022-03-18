@@ -54,6 +54,8 @@ const Testimonios = () => {
     },
   ]
 
+  const ref = useRef(null);
+
   useEffect(() => {
     if (ref.current) {
       setCarouselRef(ref.current);
@@ -62,7 +64,6 @@ const Testimonios = () => {
     }
   }, [ref])
 
-  const ref = useRef(null);
   const [current, setCurrent] = useState(Math.round(testimonials.length / 2) - 1);
   const [carouselRef, setCarouselRef] = useState(null);
 
