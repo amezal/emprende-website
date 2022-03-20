@@ -1,0 +1,52 @@
+@use 'variables' as *;
+
+.hero2{
+    width:100%;
+    overflow-x:hidden;
+    position:relative;
+    @include col(center, center);
+    min-height:90vh;
+
+    .container{
+      padding: 24vh auto;
+      justify-content:flex-start;
+      align-items: flex-start;
+      margin:0;
+    }
+
+    &__content{
+      h1{
+        margin-bottom:10vh;
+        transform: translateY(-3rem);
+        opacity: 0;
+        transition: 1.2s ease-in;
+        transition-property: transform, opacity;
+        width:40ch;
+        text-align: center;
+      }
+      
+      button{
+        @include cta-button(0.4em 4.8em);
+        transform: translateY(-4rem);
+        opacity: 0;
+        transition: 1.2s ease-in 0.2s;
+        transition-property: transform, opacity;
+        align-self:center;
+      }
+      
+      &--current{
+        h1 {
+          transition: 1.2s ease-in-out;
+          transition-property: transform, opacity;
+          transform: translateY(0);
+          opacity: 1;
+        }
+        button {
+          transition: 1.2s ease-in-out 0.2s;
+          transition-property: transform, opacity;
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+}

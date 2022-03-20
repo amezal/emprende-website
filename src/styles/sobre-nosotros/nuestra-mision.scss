@@ -1,0 +1,39 @@
+@use '../variables' as *;
+
+.nuestra-mision{
+
+  padding: 20vh 0;
+
+  &__intro{
+    @include col(center, center);
+    margin-bottom:20rem;
+
+    h2{
+      font-weight: 400;
+      margin-bottom:4vh;
+    }
+    p{
+      width:70ch;
+      text-align: center;
+      line-height:24px
+    }
+  }
+
+  &__item{
+    @include row(center, center);
+    gap:10rem;
+    margin-bottom: 10rem;
+    &__img{
+      width:40vw;
+      height:23vw;
+    }
+    h3{
+      margin-bottom:3rem;
+    }
+    p{
+      width:35ch;
+      text-align: left;
+      line-height:24px;
+    }
+  }
+}

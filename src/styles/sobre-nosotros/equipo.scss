@@ -1,0 +1,59 @@
+@use '../variables' as *;
+
+.equipo{
+  padding-bottom: 20vh;
+  h2{
+    margin-bottom: 9.5rem;
+  }
+
+  &__carousel{
+    width: 75vw;
+    @include row(center, center);
+    gap:10rem;
+    margin-bottom:5rem;
+    .integrante{
+      @include col(center, center);
+      
+      img{
+        border-radius:100%;
+        margin-bottom:3rem;
+      }
+
+      p{
+        width:20ch;
+      }
+    }
+  }
+
+  &__controls{
+    @include row(center, center);
+    gap:2rem;
+  
+    button{
+      border:none;
+      height:2.2rem;
+      background-color:transparent;
+      cursor:pointer;
+      @include col(flex-end, center);
+      
+      div{
+        width: 9rem;
+        height:0.8rem;
+        background-color:#73707c;
+        border-radius:3px;
+        transition-property: height, background-color;
+        transition: ease-in 0.2s;
+      }
+    }
+    .active{
+      div{
+        transition-property: height, background-color;
+        transition: ease-in-out 0.4s;
+        width:9rem;
+        height:1rem;
+        background-color:$btn-bg;
+      }
+    }
+  }
+
+}

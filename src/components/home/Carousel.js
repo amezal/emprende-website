@@ -74,8 +74,7 @@ const Carousel = ({ data }) => {
             key={hero.cta + i}
             preserveStackingContext
           >
-            <div className={`container hero__carousel__content 
-            ${`hero__carousel__content${current === i ? '--current' : ''}`}`}>
+            <div className={`container hero__carousel__content ${`hero__carousel__content${current === i ? '--current' : ''}`}`}>
               <span dangerouslySetInnerHTML={{ __html: `${hero.h1}` }}></span>
               <button>{hero.cta}</button>
             </div>

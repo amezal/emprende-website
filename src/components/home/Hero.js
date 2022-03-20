@@ -34,6 +34,7 @@ const Hero = () => {
   );
 
   const heros = data.allWpPost.nodes;
+
   return (
     <section className="hero">
       <Carousel data={heros} />

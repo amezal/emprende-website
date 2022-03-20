@@ -4,46 +4,46 @@
   background-color: $bg-secondary;
 
   &__left{
-    margin-bottom: 5.4rem;
+    margin-bottom: 8.6rem;
     
     img {
       border-radius:15px;
-      margin-top: 5.4rem;
+      margin-top: 8.6rem;
     }
 
     h3{
       line-height: 1.25;
-      font-size: 2.25rem;
-      margin-top:2rem;
+      font-size: 3.6rem;
+      margin-top:3.2rem;
     }
 
     button{
       @include cta-button(0.5em 4.4em);
-      font-size:1.25rem;
-      margin-top: 2.2rem;
+      font-size:2rem;
+      margin-top: 3.5rem;
     }
   }
 
   &__right{
     @include col(center, flex-end);
     align-self:flex-end;
-    margin-bottom: 5.4rem;
+    margin-bottom: 8.6rem;
 
     a{
-      font-size: 1.55rem;
+      font-size: 2.5rem;
       cursor: pointer;
       text-decoration: underline;
-      margin-bottom:1.4rem;
+      margin-bottom:2.25rem;
     }
     
     &__socials{
       @include row(center, center);
-      gap: 1.8rem;
-      margin-bottom: 1.25rem;
+      gap: 2.9rem;
+      margin-bottom: 2rem;
     }
 
     p, b {
-      font-size: 1.125rem;
+      font-size: 1.8rem;
     }    
   }
 

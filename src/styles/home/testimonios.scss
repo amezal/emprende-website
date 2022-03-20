@@ -3,7 +3,6 @@
 .testimonials{
   margin-top:5vh;
   margin-bottom:20vh;
-  
   &__carousel{
     @include row(stretch, center);
     overflow-x:hidden;
@@ -25,8 +24,8 @@
     min-width:60vw;
     background-color:#232332;
     position:relative;
-    padding-bottom: 5rem;
-    margin: 0 2.5rem;
+    padding-bottom: 8rem;
+    margin: 0 4rem;
     scroll-snap-align: center;
 
     &__img{
@@ -36,18 +35,18 @@
     }
     &__stars{
       @include row(center,center);
-      gap:1.5rem;
-      margin-top: 6.5rem;
+      gap:2.4rem;
+      margin-top: 10rem;
     }
     p{
-      margin-top:2.8rem;
+      margin-top:4.4rem;
       text-align:center;
-      font-size:1.3rem;
+      font-size:2.2rem;
       width:40ch;
       line-height:27px;
       &:last-of-type{
-        margin-top: 1.2rem;
-        font-size:0.95rem;
+        margin-top: 2rem;
+        font-size:1.5rem;
         b{
           color: #95C6FF;
         }

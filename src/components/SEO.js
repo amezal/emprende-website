@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet';
 
-const SEO = () => {
+const SEO = ({ title, description }) => {
   return (
     <Helmet title={title} meta={[{ name: `description`, content: description }]}>
 

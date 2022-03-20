@@ -9,7 +9,7 @@ $controls-color: rgb(121,121,121);
     right:2vw;
     top:60%;
     z-index:2;
-    gap:0.5rem;
+    gap:1.3rem;
 
     button{
       cursor:pointer;
@@ -19,14 +19,14 @@ $controls-color: rgb(121,121,121);
     }
 
     &__slider{
-      width:0.8rem;
-      height:0.8rem;
+      width:1.3rem;
+      height:1.3rem;
       background:transparent;
       border-radius:100%;
       border:2px solid $controls-color;
       &--current, &:hover{
-        width:0.8rem;
-        height:0.8rem;
+        width:1.3rem;
+        height:1.3rem;
         background:$controls-color;
         border:2px solid $controls-color;
         border-radius:100%;
@@ -43,7 +43,7 @@ $controls-color: rgb(121,121,121);
     @include row(stretch, center);
 
     .container{
-      padding-left: 10.3rem;
+      padding-left: 16.5rem;
       padding-top: 24vh;
       justify-content:flex-start;
       align-items: flex-start;
@@ -60,11 +60,10 @@ $controls-color: rgb(121,121,121);
     &__content{
       min-height:90vh;
       h1{
-        font-size: 4.375rem;
+        font-size: 7rem;
         font-weight:400;
         line-height:85px;
         margin-bottom:10vh;
-
         transform: translateY(-3rem);
         opacity: 0;
         transition: all 1.2s ease-in;
@@ -72,7 +71,7 @@ $controls-color: rgb(121,121,121);
       
       button{
         @include cta-button(0.4em 4.4em);
-        font-size:1.625rem;
+        font-size:2.6rem;
         transform: translateY(-4rem);
         opacity: 0;
         transition: all 1.4s ease-in;
@@ -92,6 +91,4 @@ $controls-color: rgb(121,121,121);
       }
     }
   }
- 
-
 }

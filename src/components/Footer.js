@@ -15,12 +15,12 @@ const Footer = () => {
         </div>
 
         <div className="footer__right">
-          <Link>Contactanos</Link>
+          <Link to="/contacto">Contactanos</Link>
           <div className="footer__right__socials">
-            <a target="_blank" href="https://www.instagram.com/emprende.ca/"><FaInstagram size="47px" /> </a>
-            <a target="_blank" href="https://www.facebook.com/emprender.ca"><FaFacebookSquare size="47px" /> </a>
-            <a target="_blank" href="https://www.tiktok.com/@emprende.ca"><FaTiktok size="47px" /> </a>
-            <a target="_blank" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw"><FaYoutube size="47px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/emprende.ca/"><FaInstagram size="47px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca"><FaFacebookSquare size="47px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.tiktok.com/@emprende.ca"><FaTiktok size="47px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw"><FaYoutube size="47px" /> </a>
           </div>
           <p>2022 Programa Emprende. Todos los derechos reservados.</p>
           <b>Desarrollado por: Sidekick & Armando Meza</b>

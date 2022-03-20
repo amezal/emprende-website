@@ -11,8 +11,9 @@ $btn-bg: lightblue;
   color: $fc-secondary;
   padding: $padding;
   cursor:pointer;
-
-  transition:all 100ms ease-out;
+  font-size:2.6rem;
+  transition:100ms ease-out;
+  transition-property: background-color, transform, box-shadow;
   &:hover{
     background-color:lighten($btn-bg,2%);
     transform:translateY(-1px);
