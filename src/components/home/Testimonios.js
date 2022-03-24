@@ -54,36 +54,64 @@ const Testimonios = () => {
     },
   ]
 
-  const ref = useRef(null);
+  const myRef = useRef(null);
+  const [current, setCurrent] = useState(Math.round(testimonials.length / 2));
+  const [carouselRef, setCarouselRef] = useState(null);
+  const [items, setItems] = useState(testimonials);
 
   useEffect(() => {
-    if (ref.current) {
-      setCarouselRef(ref.current);
-      const width = ref.current.firstChild.getBoundingClientRect().width;
-      ref.current.scrollLeft = width * (Math.round(testimonials.length / 2) - 1);
+    if (myRef.current) {
+      setCarouselRef(myRef.current);
+      const width = myRef.current.firstChild.getBoundingClientRect().width;
+      const arr = [...items]
+      const first = arr[0];
+      const second = arr[1];
+      const last = arr[arr.length - 1];
+      const stl = arr[arr.length - 2];
+      setItems([stl, last, ...arr, first, second]);
+      myRef.current.scrollTo({ left: width * (Math.round(testimonials.length / 2)), behavior: 'instant' });
     }
-  }, [ref])
+  }, [myRef])
 
-  const [current, setCurrent] = useState(Math.round(testimonials.length / 2) - 1);
-  const [carouselRef, setCarouselRef] = useState(null);
 
   const nextSlide = () => {
-    carouselRef.scrollLeft += carouselRef.firstChild.getBoundingClientRect().width;
-    setCurrent(current + 1);
+    let next = current + 1;
+    const width = carouselRef.firstChild.getBoundingClientRect().width;
+
+    if (next + 2 > items.length - 1) {
+      const index = 1;
+      carouselRef.scrollTo({ left: width * index, behavior: 'instant' });
+      next = 2;
+    }
+
+    const pos = carouselRef.scrollLeft + width;
+    carouselRef.scrollTo({ left: pos, behavior: 'smooth' })
+    setCurrent(next);
   }
 
   const prevSlide = () => {
-    carouselRef.scrollLeft -= carouselRef.firstChild.getBoundingClientRect().width;
-    setCurrent(current - 1);
+    let prev = current - 1;
+    const width = carouselRef.firstChild.getBoundingClientRect().width;
+
+    if (prev - 2 < 0) {
+      console.log('lala');
+      const index = items.length - 2;
+      carouselRef.scrollTo({ left: width * index, behavior: 'instant' });
+      prev = items.length - 3;
+    }
+
+    const pos = carouselRef.scrollLeft - width;
+    carouselRef.scrollTo({ left: pos, behavior: 'smooth' });
+    setCurrent(prev);
   }
 
 
   return (
     <section className="testimonials">
-      <div className="testimonials__carousel" ref={ref}>
+      <div className="testimonials__carousel" ref={myRef}>
         {
-          testimonials.map((tes, i) => (
-            <div className="testimonials__item" key={tes.title}>
+          items.map((tes, i) => (
+            <div className="testimonials__item" key={tes.title + i}>
               <GatsbyImage
                 image={tes.img}
                 alt={tes.title}
@@ -101,10 +129,10 @@ const Testimonios = () => {
               <p>Miembro desde <b>{tes.memberSince}</b></p>
 
               <button className="prev-slide controls" onClick={() => (i === current) && prevSlide()}>
-                {i > 0 && <FaChevronLeft size="30px" />}
+                {<FaChevronLeft size="30px" />}
               </button>
               <button className="next-slide controls" onClick={() => (i === current) && nextSlide()}>
-                {i < testimonials.length - 1 && <FaChevronRight size="30px" />}
+                {<FaChevronRight size="30px" />}
               </button>
             </div>
           ))

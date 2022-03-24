@@ -41,6 +41,7 @@ $controls-color: rgb(121,121,121);
     overflow-x:hidden;
     position:relative;
     @include row(stretch, center);
+    scroll-snap-type: x mandatory;
 
     .container{
       padding-left: 16.5rem;
@@ -58,6 +59,7 @@ $controls-color: rgb(121,121,121);
     }
 
     &__content{
+      scroll-snap-align: center;
       min-height:90vh;
       h1{
         font-size: 7rem;
