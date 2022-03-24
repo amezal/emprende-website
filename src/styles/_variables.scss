@@ -4,6 +4,12 @@ $fc-primary: aliceblue;
 $fc-secondary: #403c3c;
 $btn-bg: lightblue;
 
+$bp-mobile: 568px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop:1366px;
+$bp-lg-desktop: 1920px;
+
 @mixin cta-button($padding) {
   border-radius: 100px;
   background-color: $btn-bg;

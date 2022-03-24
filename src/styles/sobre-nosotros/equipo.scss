@@ -8,11 +8,24 @@
 
   &__carousel{
     width: 75vw;
-    @include row(center, center);
-    gap:10rem;
+    @include row(flex-start, center);
+    gap:auto;
+    overflow-x:scroll;
     margin-bottom:5rem;
+    scroll-snap-type: x mandatory;
     .integrante{
+      scroll-snap-align: start;
+
       @include col(center, center);
+      min-width:33%;
+
+      @media (max-width: $bp-laptop) {
+        min-width:50%;
+      }
+      
+      @media (max-width: $bp-tablet) {
+        min-width:100%;
+      }
       
       img{
         border-radius:100%;
