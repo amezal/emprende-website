@@ -6,6 +6,7 @@ import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import NuestraMision from '../components/sobre-nosotros/NuestraMision';
 import Equipo from '../components/sobre-nosotros/Equipo';
+import '../styles/style.scss';
 
 const SobreNosotros = () => {
 

@@ -22,6 +22,11 @@ const Equipo = () => {
       name: 'Luisita',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing.'
     },
+    {
+      img: 'https://picsum.photos/240/240',
+      name: 'Chepita',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing.'
+    },
   ]
 
   return (
