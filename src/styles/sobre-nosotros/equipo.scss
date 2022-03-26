@@ -10,7 +10,7 @@
     width: 75vw;
     @include row(flex-start, center);
     gap:auto;
-    overflow-x:scroll;
+    overflow-x:hidden;
     margin-bottom:5rem;
     scroll-snap-type: x mandatory;
     .integrante{
