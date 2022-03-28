@@ -1,0 +1,15 @@
+@use '../variables' as *;
+
+.aliados-emprende{
+  margin-top: 20vh;
+  h2{
+    margin-bottom:7.8rem;
+  }
+  &__list{
+    @include row(space-evenly, center);
+    gap:8rem;
+    img{
+      border-radius:100%;
+    }
+  }
+}

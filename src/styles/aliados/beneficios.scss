@@ -1,0 +1,24 @@
+@use '../variables' as *;
+
+.beneficios{
+  margin-top:14vh;
+  h2{
+    margin-bottom: 5.2rem;
+  }
+
+  &__list{
+    @include row(space-around,flex-start);
+    gap:3rem;
+    .beneficio{
+      @include col(center, center);
+      img{
+        margin-bottom:3rem;
+        border-radius:100%;
+      }
+      p{
+        line-height:24px;
+        width:30ch;
+      }
+    }
+  }
+}

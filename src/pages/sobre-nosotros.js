@@ -43,7 +43,7 @@ const SobreNosotros = () => {
             están produciendo localmente
           </h1>
         </span>
-        <button>Button</button>
+        <button>Apoyar ahora</button>
       </Hero>
       <NuestraMision />
       <Equipo />

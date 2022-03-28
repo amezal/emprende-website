@@ -1,0 +1,23 @@
+@use '../variables' as *;
+
+.como-apoyar{
+  margin-top: 24vh;
+  h2{
+    margin-bottom: 7.5rem;
+  }
+  &__list{
+    @include col(center, flex-start);
+    gap:5rem;
+    &__item{
+      @include row(center, center);
+      gap:2rem;
+
+      img{
+        border-radius:100%  
+      }
+      p{
+        font-size:2.5rem;
+      }
+    }
+  }
+}

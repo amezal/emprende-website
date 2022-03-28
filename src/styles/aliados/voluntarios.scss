@@ -1,0 +1,32 @@
+@use '../variables' as *;
+
+.voluntarios{
+
+  margin-top:20vh;
+  margin-bottom: 20vh;
+  h3{
+    text-align: center;
+    width:45ch;
+    line-height:36px;
+    margin-bottom: 7rem;
+  }
+
+  &__list{
+    @include row(center, center);
+    margin-bottom: 10rem;
+    gap: 10rem;
+    &__item{
+      @include col(center, center);
+      img{
+        border-radius:100%;
+      }
+      p{
+        width: 20ch;
+      }
+    }
+  }
+
+  button{
+    @include cta-button(0.45em 2.8em);
+  }
+}
