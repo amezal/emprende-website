@@ -1,15 +1,23 @@
-@use '../variables' as *;
+@use '../variables'as *;
 
-.aliados-emprende{
+.aliados-emprende {
   margin-top: 20vh;
-  h2{
-    margin-bottom:7.8rem;
+
+  h2 {
+    margin-bottom: 7.8rem;
   }
-  &__list{
+
+  .carousel {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__list {
     @include row(space-evenly, center);
-    gap:8rem;
-    img{
-      border-radius:100%;
+    gap: 8rem;
+
+    img {
+      border-radius: 100%;
     }
   }
 }
