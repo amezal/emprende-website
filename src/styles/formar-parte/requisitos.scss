@@ -1,1 +1,21 @@
-.requisitos {}
+@use '../variables'as *;
+
+.requisitos {
+  margin-top: 20vh;
+
+  h2 {
+    margin-bottom: 7.8rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 18rem;
+    row-gap: 6rem;
+
+    .requisito {
+      @include col(center, center);
+    }
+  }
+}

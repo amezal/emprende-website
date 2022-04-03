@@ -5,8 +5,31 @@ const Requisitos = () => {
     <div className="requisitos">
       <div className="container">
         <h2>Requisitos</h2>
-        <div className="requisitos__list">
-
+        <div className="requisitos__grid">
+          <div className="requisito">
+            <img src="https://picsum.photos/160" alt="a" />
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
+          <div className="requisito">
+            <img src="https://picsum.photos/160" alt="a" />
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
+          <div className="requisito">
+            <img src="https://picsum.photos/160" alt="a" />
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
+          <div className="requisito">
+            <img src="https://picsum.photos/160" alt="a" />
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
+          <div className="requisito">
+            <img src="https://picsum.photos/160" alt="a" />
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
+          <div className="requisito">
+            <img src="https://picsum.photos/160" alt="a" />
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
         </div>
       </div>
     </div>

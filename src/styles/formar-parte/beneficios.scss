@@ -1,1 +1,26 @@
-.beneficios-fp {}
+@use '../variables'as *;
+
+.beneficios-fp {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+
+  h2 {
+    margin-bottom: 7.8rem;
+  }
+
+  &__list {
+    margin-bottom: 10rem;
+    @include col(center, center);
+    gap: 5rem;
+
+    .item {
+      gap: 2rem;
+      @include row(flex-start, center);
+    }
+  }
+
+  button {
+    @include cta-button(0.45em 2.8em);
+  }
+
+}

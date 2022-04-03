@@ -5,7 +5,9 @@ import '../styles/style.scss';
 const Eventos = () => {
   return (
     <Layout>
-      <main>Eventos</main>
+      <div className="container">
+        <h1>asdfa</h1>
+      </div>
     </Layout>
   )
 }
