@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
@@ -29,6 +30,27 @@ const Contacto = () => {
   }
   `)
 
+  const callApi = async (e) => {
+    e.preventDefault();
+    // const url = 'https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxLzFkP5WApL9yoThQ2AvJz4EqABfCPGt6WMz1cSLdOszi75ZpRSIjTKdwAwMNcksj0Hw/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbxLzFkP5WApL9yoThQ2AvJz4EqABfCPGt6WMz1cSLdOszi75ZpRSIjTKdwAwMNcksj0Hw/exec';
+
+    const params = e.target;
+
+    const body = {
+      nombre: params[0].value,
+      apellido: params[1].value,
+      email: params[2].value,
+      filtro: params[3].value,
+      mensaje: params[4].value,
+
+      // name: params[0].value,
+      // job: params[1].value,
+    }
+    const res = await axios.post(url, body);
+    console.log(res);
+  }
+
   const image = getImage(data.wpPost.featuredImage.node.localFile);
   const bgImage = convertToBgImage(image);
   return (
@@ -43,7 +65,7 @@ const Contacto = () => {
       </Hero>
       <section className="contacto">
         <div className="container">
-          <form action="/">
+          <form onSubmit={callApi}>
             <h4><b>Envianos un mensaje</b></h4>
             <div className="separator">
               <input type="text" placeholder="Nombre" name="nombre" />
