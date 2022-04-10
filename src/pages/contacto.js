@@ -32,8 +32,8 @@ const Contacto = () => {
 
   const callApi = async (e) => {
     e.preventDefault();
-    // const url = 'https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxLzFkP5WApL9yoThQ2AvJz4EqABfCPGt6WMz1cSLdOszi75ZpRSIjTKdwAwMNcksj0Hw/exec';
-    const url = 'https://script.google.com/macros/s/AKfycbxLzFkP5WApL9yoThQ2AvJz4EqABfCPGt6WMz1cSLdOszi75ZpRSIjTKdwAwMNcksj0Hw/exec';
+    //const url = "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxcY20lhrHrvPbhmRXqaGqz6PzfOjFoF7yLNKaO4-saa7S3MchWHzMqXDV1bM6n002-jg/exec"
+    const url = "https://script.google.com/macros/s/AKfycbxcY20lhrHrvPbhmRXqaGqz6PzfOjFoF7yLNKaO4-saa7S3MchWHzMqXDV1bM6n002-jg/exec"
 
     const params = e.target;
 
@@ -43,12 +43,13 @@ const Contacto = () => {
       email: params[2].value,
       filtro: params[3].value,
       mensaje: params[4].value,
-
-      // name: params[0].value,
-      // job: params[1].value,
     }
-    const res = await axios.post(url, body);
+
+    const queryString = Object.keys(body).map((query) => (`${query}=${body[query]}&`)).join('');
+
+    const res = await axios.get(`${url}?${queryString}`)
     console.log(res);
+
   }
 
   const image = getImage(data.wpPost.featuredImage.node.localFile);
