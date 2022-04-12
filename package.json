@@ -29,6 +29,7 @@
     "gatsby-source-wordpress": "^6.9.0",
     "gatsby-transformer-sharp": "^4.9.0",
     "gbimage-bridge": "^0.2.1",
+    "moment": "^2.29.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

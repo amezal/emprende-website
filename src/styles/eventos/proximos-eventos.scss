@@ -1,0 +1,33 @@
+@use '../variables'as *;
+
+.proximos-eventos {
+  padding: 15vh 0;
+
+  .evento {
+    @include row(center, center);
+    gap: 7rem;
+    margin-top: 7.5rem;
+
+    img {
+      border-radius: 21px;
+      width: 460px;
+      height: 360px;
+    }
+
+    .content {
+      h3 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 42px;
+      }
+
+      p {
+        margin-top: 1.5rem;
+        text-align: left;
+        line-height: 24px;
+        width: 35ch;
+      }
+    }
+  }
+}

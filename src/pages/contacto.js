@@ -32,7 +32,6 @@ const Contacto = () => {
 
   const callApi = async (e) => {
     e.preventDefault();
-    //const url = "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxcY20lhrHrvPbhmRXqaGqz6PzfOjFoF7yLNKaO4-saa7S3MchWHzMqXDV1bM6n002-jg/exec"
     const url = "https://script.google.com/macros/s/AKfycbxcY20lhrHrvPbhmRXqaGqz6PzfOjFoF7yLNKaO4-saa7S3MchWHzMqXDV1bM6n002-jg/exec"
 
     const params = e.target;
