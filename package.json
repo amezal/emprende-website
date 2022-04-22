@@ -31,6 +31,7 @@
     "gbimage-bridge": "^0.2.1",
     "moment": "^2.29.2",
     "react": "^17.0.1",
+    "react-calendar": "^3.7.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",

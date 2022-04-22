@@ -36,7 +36,7 @@ const Eventos = () => {
   const image = getImage(data.wpPost.featuredImage.node.localFile);
   const bgImage = convertToBgImage(image);
 
-  const [events, setEvents] = useState([{}]);
+  const [events, setEvents] = useState(null);
 
   useEffect(async () => {
     const url = 'https://script.google.com/macros/s/AKfycbyllI0NWsGKaFmGA8kFXgmzaajSy4Seq5hUIn6BRVoZTDS56jSFmNRHqqPziWxEGyA-9Q/exec';
@@ -57,8 +57,12 @@ const Eventos = () => {
         </span>
         <button>Button</button>
       </Hero>
-      <ProximosEventos event={events[0]} />
-      <Calendario />
+      {events &&
+        <>
+          <ProximosEventos event={events[0]} />
+          <Calendario events={events} />
+        </>
+      }
       <InstagramPosts />
     </Layout>
   )
