@@ -12,6 +12,7 @@
       padding: 4rem;
       background-color: #95c6ff;
       color: white;
+      width: 30vw;
 
       h3 {
         font-size: 11rem;
@@ -21,8 +22,9 @@
       button {
         font-size: 2.5rem;
         border-radius: 100px;
-        padding: 0.5em 1.75em;
+        padding: 0.5em 1em;
         border: solid 3px white;
+        width: 100%
       }
     }
   }
