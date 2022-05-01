@@ -1,8 +1,8 @@
-$bg-primary: #2c313c;
+$bg-primary: #ffffff;
 $bg-secondary: #1e2227;
-$fc-primary: aliceblue;
-$fc-secondary: #403c3c;
-$btn-bg: lightblue;
+$fc-primary: #162F52;
+$fc-secondary: #F4EEDB;
+$btn-bg: #F15E4D;
 
 $bp-mobile: 568px;
 $bp-tablet: 768px;
@@ -13,30 +13,31 @@ $bp-lg-desktop: 1920px;
 @mixin cta-button($padding) {
   border-radius: 100px;
   background-color: $btn-bg;
-  font-weight:400;
+  font-weight: 400;
   color: $fc-secondary;
   padding: $padding;
-  cursor:pointer;
-  font-size:2.6rem;
-  transition:100ms ease-out;
+  cursor: pointer;
+  font-size: 2.6rem;
+  transition: 100ms ease-out;
   transition-property: background-color, transform, box-shadow;
-  &:hover{
-    background-color:lighten($btn-bg,2%);
-    transform:translateY(-1px);
+
+  &:hover {
+    background-color: lighten($btn-bg, 2%);
+    transform: translateY(-1px);
     box-shadow: darken($btn-bg, 20%) 0px 6px 10px -6px;
   }
 }
 
 @mixin row($jc, $ai) {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-content: $jc;
   align-items: $ai;
 }
 
 @mixin col($jc, $ai) {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: $jc;
   align-items: $ai;
 }

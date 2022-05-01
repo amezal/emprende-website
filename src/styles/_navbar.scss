@@ -1,19 +1,20 @@
-@use '../styles/variables' as *;
+@use '../styles/variables'as *;
 
-.navbar{
-  .container{
+.navbar {
+  .container {
     margin: 26px auto;
-    font-size:1.25rem;
+    font-size: 1.25rem;
     line-height: 1.5rem;
   }
 
-    img {
-      border-radius: 15px;
-    }
+  img {
+    border-radius: 15px;
+  }
 
-    button {
-      @include cta-button(0.7em 1.75em);
-      font-size: 1.8rem;
-    }
+  button {
+    @include cta-button(0.7em 1.75em);
+    background: $fc-primary;
+    font-size: 1.8rem;
+  }
 
 }

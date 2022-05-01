@@ -1,1 +1,11 @@
 @use '../variables'as *;
+
+.instagram-posts {
+  padding: 15vh 0;
+
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}

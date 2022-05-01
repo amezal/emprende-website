@@ -15,7 +15,7 @@ const Eventos = () => {
 
   const data = useStaticQuery(graphql`
   query{
-    wpPost(featuredImage: {node: {title: {eq: "hero-bg1"}}}) {
+    wpPost(featuredImage: {node: {title: {eq: "hero-bg2"}}}) {
       featuredImage {
         node {
           localFile {
