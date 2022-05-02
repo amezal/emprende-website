@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import InstagramEmbed from 'react-instagram-embed';
-import { instagram } from 'instagram-scraper-api';
 
 const InstagramPosts = () => {
 

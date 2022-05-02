@@ -1,6 +1,7 @@
 $bg-primary: #ffffff;
-$bg-secondary: #1e2227;
+$bg-secondary: #162F52;
 $fc-primary: #162F52;
+$fc-gray: #736D6D;
 $fc-secondary: #F4EEDB;
 $btn-bg: #F15E4D;
 
@@ -11,6 +12,7 @@ $bp-desktop:1366px;
 $bp-lg-desktop: 1920px;
 
 @mixin cta-button($padding) {
+  border: none;
   border-radius: 100px;
   background-color: $btn-bg;
   font-weight: 400;

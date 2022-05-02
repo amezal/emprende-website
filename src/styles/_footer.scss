@@ -1,50 +1,52 @@
-@use './variables' as *;
+@use './variables'as *;
 
-.footer{
+.footer {
   background-color: $bg-secondary;
+  color: $fc-secondary;
 
-  &__left{
+  &__left {
     margin-bottom: 8.6rem;
-    
+
     img {
-      border-radius:15px;
+      border-radius: 15px;
       margin-top: 8.6rem;
     }
 
-    h3{
+    h3 {
       line-height: 1.25;
       font-size: 3.6rem;
-      margin-top:3.2rem;
+      margin-top: 3.2rem;
     }
 
-    button{
+    button {
       @include cta-button(0.5em 4.4em);
-      font-size:2rem;
+      font-size: 2rem;
       margin-top: 3.5rem;
     }
   }
 
-  &__right{
+  &__right {
     @include col(center, flex-end);
-    align-self:flex-end;
+    align-self: flex-end;
     margin-bottom: 8.6rem;
 
-    a{
+    a {
       font-size: 2.5rem;
       cursor: pointer;
       text-decoration: underline;
-      margin-bottom:2.25rem;
+      margin-bottom: 2.25rem;
     }
-    
-    &__socials{
+
+    &__socials {
       @include row(center, center);
       gap: 2.9rem;
       margin-bottom: 2rem;
     }
 
-    p, b {
+    p,
+    b {
       font-size: 1.8rem;
-    }    
+    }
   }
 
 }

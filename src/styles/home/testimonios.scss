@@ -1,70 +1,83 @@
-@use '../variables' as *;
+@use '../variables'as *;
 
-.testimonials{
-  margin-top:5vh;
-  margin-bottom:20vh;
-  &__carousel{
+.testimonials {
+  margin-top: 5vh;
+  margin-bottom: 20vh;
+
+  &__carousel {
     @include row(stretch, center);
-    overflow-x:hidden;
-    padding-top:80px;
-    mask-image: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.1) 100%);
+    overflow-x: hidden;
+    padding-top: 80px;
+    padding-bottom: 10px;
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0.1) 100%);
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    &:first-child{
-      padding-left:20%
+
+    &:first-child {
+      padding-left: 20%
     }
-    &:last-child{
-      padding-right:20%;
+
+    &:last-child {
+      padding-right: 20%;
     }
   }
-  &__item{
+
+  &__item {
     @include col(center, center);
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
     border-radius: 34px;
-    min-width:60vw;
-    background-color:#232332;
-    position:relative;
+    min-width: 60vw;
+    color: $fc-gray;
+    background-color: $bg-primary;
+    position: relative;
     padding-bottom: 8rem;
     margin: 0 4rem;
     scroll-snap-align: center;
 
-    &__img{
-      border-radius:100%;
-      position:absolute !important;
-      top:-80px;
+    &__img {
+      border-radius: 100%;
+      position: absolute !important;
+      top: -80px;
     }
-    &__stars{
-      @include row(center,center);
-      gap:2.4rem;
+
+    &__stars {
+      @include row(center, center);
+      gap: 2.4rem;
       margin-top: 10rem;
+      color: #F8B44B;
     }
-    p{
-      margin-top:4.4rem;
-      text-align:center;
-      font-size:2.2rem;
-      width:40ch;
-      line-height:27px;
-      &:last-of-type{
+
+    p {
+      margin-top: 4.4rem;
+      text-align: center;
+      font-size: 2.2rem;
+      width: 40ch;
+      line-height: 27px;
+
+      &:last-of-type {
         margin-top: 2rem;
-        font-size:1.5rem;
-        b{
-          color: #95C6FF;
+        font-size: 1.5rem;
+
+        b {
+          color: $fc-primary;
         }
       }
     }
 
     //controls
-    .controls{
-      border:none;
-      position:absolute;
-      top:50%;
-      cursor:pointer;
+    .controls {
+      border: none;
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
     }
-    .prev-slide{
-      left:5%;
+
+    .prev-slide {
+      left: 5%;
     }
-    .next-slide{
-      right:5%;
+
+    .next-slide {
+      right: 5%;
     }
   }
 }
