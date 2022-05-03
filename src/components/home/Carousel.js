@@ -6,11 +6,12 @@ import BackgroundImage from 'gatsby-background-image';
 const Carousel = ({ data }) => {
 
   const [heros, setHeros] = useState(data.map(hero => {
-    const image = getImage(hero.featuredImage.node.localFile);
+    const image = getImage(hero.image.localFile);
     const bgImage = convertToBgImage(image);
     return {
-      h1: hero.content,
-      cta: hero.title,
+      h1: hero.ctaText,
+      cta: hero.ctaButton,
+      fc: hero.fontColor,
       img: bgImage,
     }
   }))
@@ -75,7 +76,9 @@ const Carousel = ({ data }) => {
             preserveStackingContext
           >
             <div className={`container hero__carousel__content ${`hero__carousel__content${current === i ? '--current' : ''}`}`}>
-              <span dangerouslySetInnerHTML={{ __html: `${hero.h1}` }}></span>
+              <span>
+                <h1 dangerouslySetInnerHTML={{ __html: `${hero.h1}` }} style={{ color: hero.fc }}></h1>
+              </span>
               <button>{hero.cta}</button>
             </div>
           </BackgroundImage>

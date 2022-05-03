@@ -12,38 +12,40 @@ const SobreNosotros = () => {
 
   const data = useStaticQuery(graphql`
   query{
-    wpPost(featuredImage: {node: {title: {eq: "hero-bg3"}}}) {
-      featuredImage {
-        node {
+    wpHero(hero: {page: {eq: "sobre-nosotros"}}) {
+      hero {
+        ctaButton
+        ctaText
+        fontColor
+        page
+        image{
           localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 1920, 
-                placeholder: BLURRED, 
-                formats: [AUTO, WEBP, AVIF]
-                blurredOptions:{width:100}
-              )
+              childImageSharp {
+                gatsbyImageData(
+                  width: 1920, 
+                  placeholder: BLURRED, 
+                  formats: [AUTO, WEBP, AVIF]
+                  blurredOptions:{width:100}
+                )
+              }
             }
-          }
         }
       }
     }
   }
   `)
+  const hero = data.wpHero.hero;
 
-  const image = getImage(data.wpPost.featuredImage.node.localFile);
+  const image = getImage(hero.image.localFile);
   const bgImage = convertToBgImage(image);
   return (
     <Layout>
       <Hero img={bgImage}>
         <span>
-          <h1>
-            <b>PROGRAMA EMPRENDE</b> es una plataforma que
-            apoya a los emprendedores nicaragüenses que
-            están produciendo localmente
+          <h1 dangerouslySetInnerHTML={{ __html: `${hero.ctaText}` }} style={{ color: hero.fontColor }}>
           </h1>
         </span>
-        <button>Apoyar ahora</button>
+        <button>{hero.ctaButton}</button>
       </Hero>
       <NuestraMision />
       <Equipo />

@@ -6,22 +6,21 @@ const Hero = () => {
   const data = useStaticQuery(
     graphql`
       query{
-        allWpPost(
-          filter: {categories: {nodes: {elemMatch: {name: {eq: "Hero"}}}}}
-          sort: {fields: modified, order: ASC}
-          ) {
+        allWpHero(filter: {hero: {page: {eq: "home"}}}) {
           nodes {
-            title
-            content
-            featuredImage {
-              node {
+            hero {
+              ctaButton
+              ctaText
+              fontColor
+              page
+              image {
                 localFile {
                   childImageSharp {
                     gatsbyImageData(
-                      width: 1920, 
-                      placeholder: BLURRED, 
+                      width: 1920
+                      placeholder: BLURRED
                       formats: [AUTO, WEBP, AVIF]
-                      blurredOptions:{width:100}
+                      blurredOptions: {width: 100}
                     )
                   }
                 }
@@ -33,8 +32,8 @@ const Hero = () => {
     `
   );
 
-  const heros = data.allWpPost.nodes;
-
+  const heros = data.allWpHero.nodes.map(node => node.hero);
+  console.log(heros);
   return (
     <section className="hero">
       <Carousel data={heros} />

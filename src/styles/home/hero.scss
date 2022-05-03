@@ -67,17 +67,17 @@ $controls-color: #C4C4C4;
       min-height: 90vh;
 
       h1 {
-        font-size: 7rem;
+        font-size: 5.5rem;
         font-weight: 400;
-        line-height: 85px;
-        margin-bottom: 10vh;
+        line-height: 67px;
+        margin-bottom: 5vh;
         transform: translateY(-3rem);
         opacity: 0;
         transition: all 1.2s ease-in;
       }
 
       button {
-        @include cta-button(0.4em 4.4em);
+        @include cta-button(0.6em 3.5em);
         font-size: 2.6rem;
         transform: translateY(-4rem);
         opacity: 0;
