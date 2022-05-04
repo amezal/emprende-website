@@ -50,7 +50,7 @@
       height: 50%;
       // background-color: $bg-secondary;
 
-      background: $bg-secondary;
+      background: $fc-secondary;
       // background: radial-gradient(circle, $bg-secondary 50%, rgba($bg-secondary, 0.3) 100%);
       border-radius: 50%;
       z-index: -1;
@@ -60,7 +60,7 @@
 
     @keyframes ripple {
       from {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: scale(0);
       }
 

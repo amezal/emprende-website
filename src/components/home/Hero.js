@@ -18,9 +18,10 @@ const Hero = () => {
                   childImageSharp {
                     gatsbyImageData(
                       width: 1920
-                      placeholder: BLURRED
+                      placeholder: DOMINANT_COLOR
                       formats: [AUTO, WEBP, AVIF]
-                      blurredOptions: {width: 100}
+                      blurredOptions: {width: 50}
+                      quality:100
                     )
                   }
                 }

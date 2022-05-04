@@ -23,9 +23,10 @@ const SobreNosotros = () => {
               childImageSharp {
                 gatsbyImageData(
                   width: 1920, 
-                  placeholder: BLURRED, 
+                  placeholder: NONE, 
                   formats: [AUTO, WEBP, AVIF]
                   blurredOptions:{width:100}
+                  quality:100
                 )
               }
             }

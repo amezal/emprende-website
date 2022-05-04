@@ -7,8 +7,7 @@
   &__left {
     margin-bottom: 8.6rem;
 
-    img {
-      border-radius: 15px;
+    .img {
       margin-top: 8.6rem;
     }
 
@@ -16,6 +15,7 @@
       line-height: 1.25;
       font-size: 3.6rem;
       margin-top: 3.2rem;
+      font-weight: 700;
     }
 
     button {

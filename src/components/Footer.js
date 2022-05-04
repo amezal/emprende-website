@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { FaInstagram, FaFacebookSquare, FaTiktok, FaYoutube } from 'react-icons/fa';
-
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Footer = () => {
 
@@ -9,8 +9,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__left">
-          <img src="https://picsum.photos/81/81" alt="logo" />
-          <h3>¿Querés unirte a nosotros <br /> para hacer <br /> realidad este propósito?</h3>
+          <StaticImage src="../images/Logo1.png" height="81"
+            loading="eager" alt="logo" className="img"
+            placeholder='none' quality="100" formats={["png"]} />
+          <h3>¿Querés promover el <br /> progreso económico <br /> de la región?</h3>
           <button>Button</button>
         </div>
 
