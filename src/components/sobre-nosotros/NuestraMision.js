@@ -9,31 +9,41 @@ const NuestraMision = () => {
         <div className="nuestra-mision__intro">
           <h2>Nuestra Misión</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Somos la plataforma que promueve a los emprendedores nicaragüenses que están produciendo localmente.
           </p>
         </div>
 
         <div className="nuestra-mision__item">
           <div className="item__text">
-            <h3>Nuestra Historia</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <h3>Nuestra Visión</h3>
+            <p>
+              Impulsar el emprendimiento a nivel regional, con el apoyo del sector empresarial de cada país;  para contribuir al desarrollo y progreso económico de la región.
+            </p>
           </div>
           <StaticImage
-            src='https://picsum.photos/500/300'
-            alt='lala'
+            src='../../images/NuestraVision.png'
+            alt='Nuestra visión'
+            quality={100}
             className='item__img'
           />
         </div>
 
         <div className="nuestra-mision__item">
           <StaticImage
-            src='https://picsum.photos/500/300'
+            src='../../images/TrabajamosPara.png'
             alt='lala'
             className='item__img'
           />
           <div className="item__text">
-            <h3>Que nos mueve</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <h3>Trabajamos para</h3>
+            <p>
+              <b>Promoverlos: </b>creamos espacios para que puedan exhibir y vender sus productos, en: ferias, eventos y medios digitales.
+              <br />
+              <br />
+              <br />
+              <br />
+              <b>Darles herramientas:</b> brindamos contenido educativo en diferentes áreas (finanzas, marketing, diseño, innovación, y más) para ayudarlos a desarrollar su negocio de manera exitosa.
+            </p>
           </div>
         </div>
       </div>

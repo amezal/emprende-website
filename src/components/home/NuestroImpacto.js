@@ -80,18 +80,20 @@ const NuestroImpacto = () => {
         <div className="nuestro-impacto__stats">
           <div className={statClass}>
             <h3>{`+${emprendimientos}`}</h3>
-            <p>Lorem ipsum dolor sit <br />amet, consectetur <br />adipiscing elit, sed do <br />eiusmod.</p>
+            <p>Emprendimientos beneficiados</p>
           </div>
           <div className={statClass}>
             <h3>{`+${ferias}`}</h3>
-            <p>Lorem ipsum dolor sit <br />amet, consectetur <br />adipiscing elit, sed do <br />eiusmod.</p>
+            <p>Ferias y eventos realizados</p>
           </div>
           <div className={statClass}>
             <h3>{`+${trafico}k`}</h3>
-            <p>Lorem ipsum dolor sit <br />amet, consectetur <br />adipiscing elit, sed do <br />eiusmod.</p>
+            <p>Alcance en ferias y digital</p>
           </div>
         </div>
 
+        <h2>Conocé más de nosotros</h2>
+        <p>Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo</p>
         <div className="video">
           <iframe width="1350" height="770" src="https://www.youtube.com/embed/Scg6uHLQ0GI"
             title="YouTube video player" frameborder="0"
