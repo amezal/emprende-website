@@ -93,7 +93,7 @@ const NuestroImpacto = () => {
         </div>
 
         <h2>Conocé más de nosotros</h2>
-        <p>Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo</p>
+        <p className="subtitulo">Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo</p>
         <div className="video">
           <iframe width="1350" height="770" src="https://www.youtube.com/embed/Scg6uHLQ0GI"
             title="YouTube video player" frameborder="0"
