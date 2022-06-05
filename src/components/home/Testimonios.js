@@ -6,53 +6,34 @@ import { FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 const Testimonios = () => {
 
   const data = useStaticQuery(graphql`
-    {
-      allImageSharp(filter: {original: {src: {regex: "/testimonial/"}}}) {
-        nodes {
-          gatsbyImageData(
-            width: 165
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            )
+  query {
+    allWpTestimonio {
+      nodes {
+        testimonio {
+          title
+          img {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 165
+                  placeholder: DOMINANT_COLOR
+                  formats: [AUTO, WEBP, AVIF]
+                  blurredOptions: {width: 50}
+                  quality:100)
+              }
+            }
+          }
+          text
+          stars
+          label
+          url
         }
       }
     }
+  }
   `)
 
-  const images = data.allImageSharp.nodes;
-
-  const testimonials = [
-    {
-      title: 'JG Desserts',
-      img: images[0].gatsbyImageData,
-      stars: 5,
-      text: `Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit, sed do eiusmod tempor incididunt ut labore et
-      dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco.`,
-      memberSince: 2019,
-    },
-    {
-      title: 'Viña Mía',
-      img: images[2].gatsbyImageData,
-      stars: 4,
-      text: `Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit, sed do eiusmod tempor incididunt ut labore et
-      dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco.`,
-      memberSince: 2020,
-    },
-    {
-      title: 'Buñuelitos',
-      img: images[1].gatsbyImageData,
-      stars: 5,
-      text: `Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit, sed do eiusmod tempor incididunt ut labore et
-      dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco.`,
-      memberSince: 2021,
-    },
-  ]
+  const testimonials = data.allWpTestimonio.nodes.map(node => node.testimonio)
 
   const myRef = useRef(null);
   const [current, setCurrent] = useState(Math.round(testimonials.length / 2));
@@ -113,7 +94,7 @@ const Testimonios = () => {
           items.map((tes, i) => (
             <div className="testimonials__item" key={tes.title + i}>
               <GatsbyImage
-                image={tes.img}
+                image={tes.img.localFile.childImageSharp.gatsbyImageData}
                 alt={tes.title}
                 className="testimonials__item__img"
                 width="165px"
@@ -121,12 +102,16 @@ const Testimonios = () => {
               />
               <div className="testimonials__item__stars">
                 {[...Array(5)].map((star, i) => (
-                  <FaStar size="40px" key={i} />
+                  <FaStar size="40px" key={i} color={tes.stars > i ? '#F8B44B' : '#736d6d'} />
                 ))}
               </div>
 
               <p>{tes.text}</p>
-              <p>Miembro desde <b>{tes.memberSince}</b></p>
+              <p>{tes.title} {" / "}
+                <b>
+                  <a target="_blank" rel="noreferrer" href={tes.url}>{tes.label}</a>
+                </b>
+              </p>
 
               <button className="prev-slide controls" onClick={() => (i === current) && prevSlide()}>
                 {<FaChevronLeft size="30px" />}

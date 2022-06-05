@@ -1,4 +1,4 @@
-@use '../variables'as *;
+@use '../variables' as *;
 
 .testimonials {
   margin-top: 5vh;
@@ -50,7 +50,7 @@
     p {
       margin-top: 4.4rem;
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2rem;
       width: 40ch;
       line-height: 27px;
 
@@ -59,7 +59,11 @@
         font-size: 1.5rem;
 
         b {
-          color: $fc-primary;
+          a {
+            text-decoration: underline;
+            font-size: 1.5rem;
+            color: $fc-primary;
+          }
         }
       }
     }
