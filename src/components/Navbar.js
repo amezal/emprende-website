@@ -16,7 +16,9 @@ const Navbar = () => {
         <Link to="/aliados">Aliados</Link>
         <Link to="/eventos">Eventos</Link>
         <Link to="/formar-parte">Forma parte</Link>
-        <button onClick={() => navigate('/contacto')}>Contactanos</button>
+        <div className="btn">
+          <button onClick={() => navigate('/contacto')}>Contactanos</button>
+        </div>
       </div>
     </nav>
   )
