@@ -1,4 +1,4 @@
-@use './variables'as *;
+@use './variables' as *;
 
 .footer {
   background-color: $bg-secondary;
@@ -13,7 +13,7 @@
 
     h3 {
       line-height: 1.25;
-      font-size: 3.6rem;
+      font-size: 4rem;
       margin-top: 3.2rem;
       font-weight: 700;
     }
@@ -31,7 +31,7 @@
     margin-bottom: 8.6rem;
 
     a {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
       text-decoration: underline;
       margin-bottom: 2.25rem;
@@ -39,7 +39,7 @@
 
     &__socials {
       @include row(center, center);
-      gap: 2.9rem;
+      gap: 2rem;
       margin-bottom: 2rem;
     }
 

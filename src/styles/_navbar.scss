@@ -1,17 +1,23 @@
-@use '../styles/variables'as *;
+@use '../styles/variables' as *;
 
 .navbar {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 26px 0;
+
   .container {
-    margin: 26px auto;
-    font-size: 1.25rem;
     line-height: 1.5rem;
+
+    p,
+    a {
+      font-size: 1.5rem;
+    }
   }
 
   button {
     @include cta-button(0.7em 1.75em);
     background: $fc-primary;
     color: #FFFFFF;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 400;
   }
 

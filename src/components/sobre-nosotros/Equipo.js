@@ -57,7 +57,7 @@ const Equipo = () => {
   return (
     <section className="equipo">
       <div className="container">
-        <h2>El equipo</h2>
+        <h2>Equipo Emprende</h2>
         <div className="equipo__carousel" ref={carouselRef}>
           {equipo.map(integrante => (
             <div className="integrante" key={integrante.name}>
