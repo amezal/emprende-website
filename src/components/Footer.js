@@ -13,7 +13,7 @@ const Footer = () => {
             loading="eager" alt="logo" className="img"
             placeholder='none' quality="100" formats={["png"]} />
           <h3>¿Querés promover el <br /> progreso económico <br /> de la región?</h3>
-          <button>Button</button>
+          <button>Apoyar</button>
         </div>
 
         <div className="footer__right">
