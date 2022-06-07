@@ -4,7 +4,7 @@
   padding-bottom: 20vh;
 
   h2 {
-    margin-bottom: 9.5rem;
+    // margin-bottom: 0rem;
   }
 
   &__carousel {
@@ -14,6 +14,7 @@
     overflow-x: hidden;
     margin-bottom: 5rem;
     scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
 
     .integrante {
       scroll-snap-align: start;
@@ -33,10 +34,17 @@
       &__img {
         border-radius: 100%;
         margin-bottom: 3rem;
+        position: relative;
+        bottom: -120px;
       }
 
       &__text {
-        @include col(center, center);
+        @include col(flex-start, center);
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        width: 90%;
+        padding-top: 110px;
+        min-height: 350px;
       }
 
       p {
@@ -53,6 +61,8 @@
           color: $fc-primary;
           font-weight: 300;
           margin-bottom: 2rem;
+          display: block;
+          font-style: italic;
         }
       }
     }
