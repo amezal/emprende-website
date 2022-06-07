@@ -1,4 +1,4 @@
-@use '../variables'as *;
+@use '../variables' as *;
 
 .equipo {
   padding-bottom: 20vh;
@@ -8,8 +8,8 @@
   }
 
   &__carousel {
-    width: 75vw;
-    @include row(flex-start, center);
+    width: 85vw;
+    @include row(flex-start, flex-start);
     gap: auto;
     overflow-x: hidden;
     margin-bottom: 5rem;
@@ -29,13 +29,31 @@
         min-width: 100%;
       }
 
-      img {
+
+      &__img {
         border-radius: 100%;
         margin-bottom: 3rem;
       }
 
+      &__text {
+        @include col(center, center);
+      }
+
       p {
-        width: 20ch;
+        width: 70%;
+        color: $fc-gray;
+        font-size: 1.5rem;
+
+        b {
+          font-size: 2rem;
+          color: $fc-primary;
+        }
+
+        span {
+          color: $fc-primary;
+          font-weight: 300;
+          margin-bottom: 2rem;
+        }
       }
     }
   }

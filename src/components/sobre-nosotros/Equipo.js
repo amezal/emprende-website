@@ -1,29 +1,37 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Equipo = () => {
 
-  const equipo = [
-    {
-      img: 'https://picsum.photos/240/240',
-      name: 'Petrona',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing.'
-    },
-    {
-      img: 'https://picsum.photos/240/240',
-      name: 'Aasdfa',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing.'
-    },
-    {
-      img: 'https://picsum.photos/240/240',
-      name: 'Luisita',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing.'
-    },
-    {
-      img: 'https://picsum.photos/240/240',
-      name: 'Chepita',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing.'
-    },
-  ]
+  const data = useStaticQuery(graphql`
+  query {
+    allWpMiembro {
+      nodes {
+        equipo {
+          name
+          title
+          text
+          img {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 175
+                  placeholder: DOMINANT_COLOR
+                  formats: [AUTO, WEBP, AVIF]
+                  blurredOptions: {width: 50}
+                  quality: 100
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `)
+
+  const equipo = data.allWpMiembro.nodes.map(node => node.equipo)
   const [active, setActive] = useState(0);
   const [visibleItems, setVisibleItems] = useState(3);
   const [numberOfPages, setNumberOfPages] = useState(2);
@@ -43,14 +51,14 @@ const Equipo = () => {
 
   useEffect(() => {
     window.addEventListener('resize', setSlides);
+    setSlides();
     return (() => window.removeEventListener('resize', setSlides));
-  }, [])
+  })
 
   const goToSlide = (i) => {
     setActive(i);
     const width = carouselRef.current.children[0].getBoundingClientRect().width;
     carouselRef.current.scrollTo({ left: width * i, behavior: 'smooth' })
-
   }
 
 
@@ -61,11 +69,22 @@ const Equipo = () => {
         <div className="equipo__carousel" ref={carouselRef}>
           {equipo.map(integrante => (
             <div className="integrante" key={integrante.name}>
-              <img
-                src={integrante.img}
+              <GatsbyImage
+                image={integrante.img.localFile.childImageSharp.gatsbyImageData}
                 alt={integrante.name}
+                className="integrante__img"
+                width={175}
+                height={175}
               />
-              <p>{integrante.text}</p>
+              <div className="integrante__text">
+                <p>
+                  <b>{integrante.name}</b>
+                </p>
+                <p>
+                  <span>{integrante.title}</span>
+                </p>
+                <p>{integrante.text}</p>
+              </div>
             </div>
           ))}
         </div>
