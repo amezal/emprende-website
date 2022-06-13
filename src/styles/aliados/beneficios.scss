@@ -1,23 +1,43 @@
 @use '../variables' as *;
 
-.beneficios{
-  margin-top:14vh;
-  h2{
+.beneficios {
+  margin-top: 14vh;
+
+  h2 {
     margin-bottom: 5.2rem;
   }
 
-  &__list{
-    @include row(space-around,flex-start);
-    gap:3rem;
-    .beneficio{
+  p {
+    color: $fc-gray;
+    font-size: 3rem;
+    width: 45ch;
+  }
+
+  h3 {
+    margin-top: 13rem;
+    margin-bottom: 7rem;
+  }
+
+  &__list {
+    @include row(space-around, flex-start);
+    gap: 15rem;
+
+    .beneficio {
       @include col(center, center);
-      img{
-        margin-bottom:3rem;
-        border-radius:100%;
+
+      &__img {
+        margin-bottom: 3rem;
       }
-      p{
-        line-height:24px;
-        width:30ch;
+
+      h4 {
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        line-height: 24px;
+        font-size: 2rem;
+        width: 20ch;
       }
     }
   }
