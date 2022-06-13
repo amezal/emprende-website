@@ -14,7 +14,7 @@ const Aliados = () => {
 
   const data = useStaticQuery(graphql`
   query{
-    wpHero(hero: {page: {eq: "sobre-nosotros"}}) {
+    wpHero(hero: {page: {eq: "aliados"}}) {
       hero {
         ctaButton
         ctaText
