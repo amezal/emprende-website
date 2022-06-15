@@ -7,13 +7,33 @@ const ComoApoyar = () => {
         <h2>Como apoyar</h2>
         <div className="como-apoyar__list">
           <div className="como-apoyar__list__item">
-            <img src="https://picsum.photos/50/50" alt="apoyo" />
-            <p>Organizando ferias</p>
+            <span>01</span>
+            <p>Organizando ferias y eventos</p>
           </div>
 
           <div className="como-apoyar__list__item">
-            <img src="https://picsum.photos/50/50" alt="apoyo" />
-            <p>Participando en webinars o talleres</p>
+            <span>02</span>
+            <p>Impartiendo webinars o talleres</p>
+          </div>
+
+          <div className="como-apoyar__list__item">
+            <span>03</span>
+            <p>Financiando económicamente las actividades</p>
+          </div>
+
+          <div className="como-apoyar__list__item">
+            <span>04</span>
+            <p>Brindando espacio físico para los emprendedores</p>
+          </div>
+
+          <div className="como-apoyar__list__item">
+            <span>05</span>
+            <p>Conectándonos con oportunidades</p>
+          </div>
+
+          <div className="como-apoyar__list__item">
+            <span>06</span>
+            <p>Promoviendo nuestros productos locales</p>
           </div>
 
         </div>
