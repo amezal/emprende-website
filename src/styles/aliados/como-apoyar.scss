@@ -19,7 +19,7 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 3.2rem;
     grid-row-gap: 3.5rem;
-
+    grid-auto-flow: column;
 
     &__item {
       @include row(center, center);
@@ -41,6 +41,7 @@
         font-size: 2.5rem;
         width: 20ch;
         text-align: left;
+        color: $fc-gray;
       }
     }
   }
