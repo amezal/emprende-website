@@ -16,6 +16,7 @@ const Testimonios = () => {
               childImageSharp {
                 gatsbyImageData(
                   width: 165
+                  height: 165
                   placeholder: DOMINANT_COLOR
                   formats: [AUTO, WEBP, AVIF]
                   blurredOptions: {width: 50}
