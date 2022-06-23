@@ -77,6 +77,7 @@ const NuestroImpacto = () => {
     <section className="nuestro-impacto">
       <div ref={myRef} className="container">
         <h2>Nuestro Impacto</h2>
+        <p className="subtitulo">Seguimos dejando huella en pro del emprendimiento local</p>
         <div className="nuestro-impacto__stats">
           <div className={statClass}>
             <h3>{`+${emprendimientos}`}</h3>

@@ -15,8 +15,8 @@ const Testimonios = () => {
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 165
-                  height: 165
+                  width: 130
+                  height: 130
                   placeholder: DOMINANT_COLOR
                   formats: [AUTO, WEBP, AVIF]
                   blurredOptions: {width: 50}
@@ -90,6 +90,13 @@ const Testimonios = () => {
 
   return (
     <section className="testimonials">
+      <div className="container">
+        <h2>Logros de nuestros emprendedores</h2>
+        <p className="subtitulo">
+          El apoyo de nuestros aliados ha impactado
+          la vida y economía de muchas familias
+        </p>
+      </div>
       <div className="testimonials__carousel" ref={myRef}>
         {
           items.map((tes, i) => (
@@ -98,12 +105,12 @@ const Testimonios = () => {
                 image={tes.img.localFile.childImageSharp.gatsbyImageData}
                 alt={tes.title}
                 className="testimonials__item__img"
-                width="165px"
-                height="165px"
+                width="130px"
+                height="130px"
               />
               <div className="testimonials__item__stars">
                 {[...Array(5)].map((star, i) => (
-                  <FaStar size="40px" key={i} color={tes.stars > i ? '#F8B44B' : '#736d6d'} />
+                  <FaStar size="24px" key={i} color={tes.stars > i ? '#F8B44B' : '#736d6d'} />
                 ))}
               </div>
 
@@ -113,13 +120,17 @@ const Testimonios = () => {
                   <a target="_blank" rel="noreferrer" href={tes.url}>{tes.label}</a>
                 </b>
               </p>
-
-              <button className="prev-slide controls" onClick={() => (i === current) && prevSlide()}>
-                {<FaChevronLeft size="30px" />}
-              </button>
-              <button className="next-slide controls" onClick={() => (i === current) && nextSlide()}>
-                {<FaChevronRight size="30px" />}
-              </button>
+              {
+                i === current &&
+                <>
+                  <button className="prev-slide controls" onClick={() => prevSlide()}>
+                    {<FaChevronLeft size="30px" />}
+                  </button>
+                  <button className="next-slide controls" onClick={() => nextSlide()}>
+                    {<FaChevronRight size="30px" />}
+                  </button>
+                </>
+              }
             </div>
           ))
         }
