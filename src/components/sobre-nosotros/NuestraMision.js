@@ -10,7 +10,7 @@ const NuestraMision = () => {
           <h2>Nuestra Misión</h2>
           <p>
             Somos la plataforma que promueve a los emprendedores nicaragüenses que están produciendo localmente.
-          </p>
+            Trabajamos con el objetivo de contribuir al desarrollo y progreso económico en la región.           </p>
         </div>
 
         <div className="nuestra-mision__item">
