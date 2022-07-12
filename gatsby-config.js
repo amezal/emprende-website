@@ -1,13 +1,15 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Proyecto Emprende`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.emprendeca.com`
   },
   plugins: [
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        "url": "https://dev-emprende.pantheonsite.io/graphql"
+        "url": process.env.WP_GRAPHQL_URL
       }
     },
     "gatsby-plugin-sass",
