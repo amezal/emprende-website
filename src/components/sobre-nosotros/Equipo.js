@@ -6,7 +6,7 @@ const Equipo = () => {
 
   const data = useStaticQuery(graphql`
   query {
-    allWpMiembro {
+    allWpMiembro(sort: {fields: date}) {
       nodes {
         equipo {
           name
