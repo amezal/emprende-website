@@ -4,12 +4,17 @@
   margin-top: 5vh;
   margin-bottom: 20vh;
 
+  h2 {
+    width: 20ch;
+    text-align: center;
+  }
+
   .container {
     margin-bottom: 8rem;
 
     .subtitulo {
       color: $fc-gray;
-      width: 50ch;
+      width: 40ch;
       margin-top: 3rem;
     }
   }

@@ -20,7 +20,7 @@
     @include row(flex-end, center);
 
     button {
-      @include cta-button(0.7em 1.75em);
+      @include cta-button(0.8em 2.8em);
       background: $fc-primary;
       color: #FFFFFF;
       font-size: 1.5rem;
