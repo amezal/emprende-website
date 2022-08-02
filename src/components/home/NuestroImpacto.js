@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
 function remap(input, input_start, input_end, output_start, output_end) {
   const output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
@@ -13,15 +14,30 @@ function ease(x) {
 
 const NuestroImpacto = () => {
 
+  const data = useStaticQuery(
+    graphql`
+      query{
+        allWpKpi(sort: {fields: date, order: ASC}) {
+          nodes {
+            kpis {
+              text
+              value
+            }
+          }
+        }
+      }
+    `
+  );
+  const kpis = data.allWpKpi.nodes.map(node => node.kpis);
+  const [emprendimientos, ferias, trafico] = kpis;
+  // const emprendimientos = { value: 1, text: 'hola' }
+  // const ferias = { value: 2, text: 'hola' }
+  // const trafico = { value: 3, text: 'hola' }
+
   const [counting, setCounting] = useState(false);
-  const [emprendimientos, setEmprendimientos] = useState(0);
-  const [ferias, setFerias] = useState(0);
-  const [trafico, setTrafico] = useState(0);
-  const goals = {
-    emprendimientos: 173,
-    ferias: 23,
-    trafico: 50,
-  }
+  const [emprendimientosCounter, setEmprendimientosCounter] = useState(0);
+  const [feriasCounter, setFeriasCounter] = useState(0);
+  const [traficoCounter, setTraficoCounter] = useState(0);
 
   const myRef = useRef(null);
 
@@ -45,14 +61,14 @@ const NuestroImpacto = () => {
 
       const value = remap(msPassed, 0, duration, 0, 1);
       const counter = ease(value);
-      setEmprendimientos(
-        Math.floor(remap(counter, 0, 1, 0, goals.emprendimientos))
+      setEmprendimientosCounter(
+        Math.floor(remap(counter, 0, 1, 0, emprendimientos.value))
       )
-      setFerias(
-        Math.floor(remap(counter, 0, 1, 0, goals.ferias))
+      setFeriasCounter(
+        Math.floor(remap(counter, 0, 1, 0, ferias.value))
       )
-      setTrafico(
-        Math.floor(remap(counter, 0, 1, 0, goals.trafico))
+      setTraficoCounter(
+        Math.floor(remap(counter, 0, 1, 0, trafico.value))
       )
       msPassed += delay;
     }, delay);
@@ -71,39 +87,43 @@ const NuestroImpacto = () => {
     }
   }, [counting])
 
-  const statClass = `nuestro-impacto__stat ${(emprendimientos === goals.emprendimientos) ? 'nuestro-impacto__stat--completed' : ''}`
+  const statClass = `nuestro-impacto__stat ${(emprendimientosCounter === emprendimientos.value) ? 'nuestro-impacto__stat--completed' : ''}`
 
   return (
-    <section className="nuestro-impacto">
-      <div ref={myRef} className="container">
-        <h2>Nuestro Impacto</h2>
-        <p className="subtitulo">Seguimos dejando huella en pro del emprendimiento local</p>
-        <div className="nuestro-impacto__stats">
-          <div className={statClass}>
-            <h3>{`+${emprendimientos}`}</h3>
-            <p>Emprendimientos beneficiados</p>
-          </div>
-          <div className={statClass}>
-            <h3>{`+${ferias}`}</h3>
-            <p>Ferias y eventos realizados</p>
-          </div>
-          <div className={statClass}>
-            <h3>{`+${trafico}k`}</h3>
-            <p>Alcance en ferias y digital</p>
-          </div>
-        </div>
+    <>
+      {data &&
+        <section className="nuestro-impacto">
+          <div ref={myRef} className="container">
+            <h2>Nuestro Impacto</h2>
+            <p className="subtitulo">Seguimos dejando huella en pro del emprendimiento local</p>
+            <div className="nuestro-impacto__stats">
+              <div className={statClass}>
+                <h3>{`+${emprendimientosCounter}`}</h3>
+                <p>{emprendimientos.text}</p>
+              </div>
+              <div className={statClass}>
+                <h3>{`+${feriasCounter}`}</h3>
+                <p>{ferias.text}</p>
+              </div>
+              <div className={statClass}>
+                <h3>{`+${traficoCounter}k`}</h3>
+                <p>{trafico.text}</p>
+              </div>
+            </div>
 
-        <h2>Conocé más de nosotros</h2>
-        <p className="subtitulo">Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo</p>
-        <div className="video">
-          <iframe width="1350" height="770" src="https://www.youtube.com/embed/Scg6uHLQ0GI"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section >
+            <h2>Conocé más de nosotros</h2>
+            <p className="subtitulo">Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo</p>
+            <div className="video">
+              <iframe width="1350" height="770" src="https://www.youtube.com/embed/Scg6uHLQ0GI"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </section >
+      }
+    </>
   )
 }
 
