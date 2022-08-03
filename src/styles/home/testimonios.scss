@@ -29,11 +29,11 @@
     scroll-behavior: smooth;
 
     &:first-child {
-      padding-left: 20%
+      padding-left: 30%
     }
 
     &:last-child {
-      padding-right: 20%;
+      padding-right: 30%;
     }
   }
 
@@ -45,15 +45,15 @@
     background-color: $bg-primary;
     position: relative;
     padding-bottom: 8rem;
-    margin: 0 4rem;
+    margin: 0 6rem;
     scroll-snap-align: center;
-    min-width: 78rem;
-    height: 37.5rem;
+    min-width: 48.2rem;
+    height: 23.2rem;
 
     &__img {
       border-radius: 100%;
       position: absolute !important;
-      top: -70px;
+      top: -40px;
     }
 
     &__stars {
@@ -64,20 +64,20 @@
     }
 
     p {
-      margin-top: 4.4rem;
+      margin-top: 2rem;
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 1.2rem;
       width: 38ch;
-      line-height: 27px;
+      line-height: 14.6px;
 
       &:last-of-type {
         margin-top: 2rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
 
         b {
           a {
             text-decoration: underline;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: $fc-primary;
           }
         }

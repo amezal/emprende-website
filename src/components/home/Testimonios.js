@@ -15,8 +15,8 @@ const Testimonios = () => {
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 130
-                  height: 130
+                  width: 80
+                  height: 80
                   placeholder: DOMINANT_COLOR
                   formats: [AUTO, WEBP, AVIF]
                   blurredOptions: {width: 50}
@@ -42,6 +42,7 @@ const Testimonios = () => {
   const [items, setItems] = useState(testimonials);
 
   useEffect(() => {
+    console.log(items);
     if (myRef.current) {
       setCarouselRef(myRef.current);
       const width = myRef.current.firstChild.getBoundingClientRect().width;
@@ -75,16 +76,17 @@ const Testimonios = () => {
     let prev = current - 1;
     const width = carouselRef.firstChild.getBoundingClientRect().width;
 
-    if (prev - 2 < 0) {
-      console.log('lala');
+    if (prev - 1 < 0) {
       const index = items.length - 2;
       carouselRef.scrollTo({ left: width * index, behavior: 'instant' });
-      prev = items.length - 3;
+      prev = items.length - 4;
+      console.log('lala');
     }
 
     const pos = carouselRef.scrollLeft - width;
     carouselRef.scrollTo({ left: pos, behavior: 'smooth' });
     setCurrent(prev);
+    console.log(prev);
   }
 
 
@@ -105,12 +107,12 @@ const Testimonios = () => {
                 image={tes.img.localFile.childImageSharp.gatsbyImageData}
                 alt={tes.title}
                 className="testimonials__item__img"
-                width="130px"
-                height="130px"
+                width="80px"
+                height="80px"
               />
               <div className="testimonials__item__stars">
                 {[...Array(5)].map((star, i) => (
-                  <FaStar size="24px" key={i} color={tes.stars > i ? '#F8B44B' : '#736d6d'} />
+                  <FaStar size="18px" key={i} color={tes.stars > i ? '#F8B44B' : '#736d6d'} />
                 ))}
               </div>
 
@@ -124,10 +126,10 @@ const Testimonios = () => {
                 i === current &&
                 <>
                   <button className="prev-slide controls" onClick={() => prevSlide()}>
-                    {<FaChevronLeft size="30px" />}
+                    {<FaChevronLeft size="18px" />}
                   </button>
                   <button className="next-slide controls" onClick={() => nextSlide()}>
-                    {<FaChevronRight size="30px" />}
+                    {<FaChevronRight size="18px" />}
                   </button>
                 </>
               }
