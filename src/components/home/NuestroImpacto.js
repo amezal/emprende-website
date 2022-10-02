@@ -111,6 +111,8 @@ const NuestroImpacto = () => {
               </div>
             </div>
 
+            <hr />
+            
             <h2>Conocé más de nosotros</h2>
             <p className="subtitulo">Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo</p>
             <div className="video">
