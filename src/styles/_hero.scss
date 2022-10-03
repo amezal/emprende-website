@@ -2,11 +2,11 @@
 
 .hero2 {
   margin-top: 132px;
+  height: 520px;
   width: 100%;
   overflow-x: hidden;
   position: relative;
   @include col(center, flex-start);
-  min-height: 90vh;
 
   .container {
     // padding: 24vh auto;

@@ -16,8 +16,8 @@ const Equipo = () => {
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 175
-                  height: 175
+                  width: 140
+                  height: 140
                   placeholder: DOMINANT_COLOR
                   formats: [AUTO, WEBP, AVIF]
                   blurredOptions: {width: 50}

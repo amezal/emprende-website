@@ -1,11 +1,9 @@
 @use '../variables' as *;
 
 .equipo {
-  padding-bottom: 20vh;
+  margin-top: 15rem;
+  margin-bottom: 20rem;
 
-  h2 {
-    // margin-bottom: 0rem;
-  }
 
   &__carousel {
     width: 85vw;
@@ -35,32 +33,32 @@
         border-radius: 100%;
         margin-bottom: 3rem;
         position: relative;
-        bottom: -120px;
+        bottom: -80px;
       }
 
       &__text {
         @include col(flex-start, center);
         box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
         border-radius: 30px;
-        width: 90%;
-        padding-top: 110px;
-        min-height: 350px;
+        width: 270px;
+        padding-top: 75px;
+        height: 240px;
       }
 
       p {
         width: 70%;
         color: $fc-gray;
-        font-size: 1.5rem;
-
+        font-size: 1.1rem;
+        font-style: italic;
         b {
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: $fc-primary;
         }
 
         span {
           color: $fc-primary;
           font-weight: 300;
-          margin-bottom: 2rem;
+          margin-bottom: 1.2rem;
           display: block;
           font-style: italic;
         }
@@ -80,10 +78,10 @@
       @include col(flex-end, center);
 
       div {
-        width: 9rem;
-        height: 0.8rem;
+        width: 7rem;
+        height: 0.6rem;
         background-color: #73707c;
-        border-radius: 3px;
+        border-radius: 5px;
         transition-property: height, background-color;
         transition: ease-in 0.2s;
       }
@@ -93,8 +91,8 @@
       div {
         transition-property: height, background-color;
         transition: ease-in-out 0.4s;
-        width: 9rem;
-        height: 1rem;
+        width: 7rem;
+        height: 0.8rem;
         background-color: $fc-primary;
       }
     }

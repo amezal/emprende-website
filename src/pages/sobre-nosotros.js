@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
-import NuestraMision from '../components/sobre-nosotros/NuestraMision';
+import NuestrosObjetivos from '../components/sobre-nosotros/NuestrosObjetivos';
 import Equipo from '../components/sobre-nosotros/Equipo';
 import '../styles/style.scss';
 
@@ -48,7 +48,8 @@ const SobreNosotros = () => {
         </span>
         <button>{hero.ctaButton}</button>
       </Hero>
-      <NuestraMision />
+      <NuestrosObjetivos />
+      <hr />
       <Equipo />
     </Layout>
   )

@@ -1,0 +1,21 @@
+@use '../variables' as *;
+
+.nuestros-objetivos {
+  margin-top: 24.3rem;
+  margin-bottom: 20rem;
+
+  .container {
+    @include row(center, center);
+    gap: 15rem;
+  }
+
+  h2 {
+    width: 10ch;
+  }
+
+  p.subtitulo {
+    color: $fc-gray;
+    width: 46rem;
+    text-align: left;
+  }
+}
