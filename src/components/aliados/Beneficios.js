@@ -5,11 +5,14 @@ const Beneficios = () => {
   return (
     <section className="beneficios">
       <div className="container">
+        <div className="aliados">
         <h2>Aliados Emprende</h2>
         <p>
           Convertite en una empresa aliada para juntos potenciar el progreso económico en  la región.
         </p>
-        <h3>Beneficios para tu marca</h3>
+        </div>
+        <hr />
+        <h2>Beneficios para tu marca</h2>
         <div className="beneficios__list">
           <div className="beneficio">
             <StaticImage

@@ -1,48 +1,23 @@
 @use '../variables' as *;
 
 .como-apoyar {
-  margin-top: 24vh;
 
+  margin-top: 15rem;
+  margin-bottom: 20rem;
+
+  .container {
+    @include row(center, center);
+    gap: 5rem;
+  }
   h2 {
     margin-bottom: 7.5rem;
   }
 
   &__list {
-
-    // @include col(center, flex-start);
-    // flex-wrap: wrap;
-    // gap: 7rem;
-    // max-height: 40rem;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 3.2rem;
-    grid-row-gap: 3.5rem;
-    grid-auto-flow: column;
-
-    &__item {
-      @include row(center, center);
-      gap: 3.7rem;
-
-      span {
-        @include col(center, center);
-        border-radius: 100%;
-        background-color: $fc-primary;
-        color: white;
-        font-size: 3rem;
-        font-weight: 700;
-        width: 7.2rem;
-        height: 7.2rem;
-        text-align: center;
-      }
-
-      p {
-        font-size: 2.5rem;
-        width: 20ch;
-        text-align: left;
-        color: $fc-gray;
-      }
+    li {
+      padding-left: 2rem;
+      font-size: 2rem;
+      list-style-position: inside;
     }
   }
 }

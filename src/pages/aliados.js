@@ -49,10 +49,12 @@ const Aliados = () => {
         </span>
         <button>{hero.ctaButton}</button>
       </Hero>
-
       <Beneficios />
+      <hr />
       <ComoApoyar />
+      <hr />
       <AliadosEmprende />
+      <hr />
       <Voluntarios />
 
     </Layout>
