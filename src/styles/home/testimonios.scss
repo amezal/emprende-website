@@ -48,14 +48,14 @@
     padding-bottom: 8rem;
     margin: 0;
     scroll-snap-align: center;
-    min-width: 48.2rem;
-    width: 48.2rem;
-    height: 23.2rem;
+    min-width: 54rem;
+    width: 54rem;
+    height: 26rem;
 
     &__img {
       border-radius: 100%;
       position: absolute !important;
-      top: -40px;
+      top: -60px;
     }
 
     &__stars {
@@ -68,7 +68,7 @@
     p {
       margin-top: 2rem;
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       width: 38ch;
       line-height: 14.6px;
 
