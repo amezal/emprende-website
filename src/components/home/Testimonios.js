@@ -52,7 +52,7 @@ const Testimonios = () => {
       const last = arr[arr.length - 1];
       const stl = arr[arr.length - 2];
       setItems([stl, last, ...arr, first, second]);
-      myRef.current.scrollTo({ left: width * (Math.round(testimonials.length / 2)), behavior: 'instant' });
+      myRef.current.scrollTo({ left: width, behavior: 'instant' });
     }
   }, [myRef])
 
@@ -61,10 +61,10 @@ const Testimonios = () => {
     let next = current + 1;
     const width = carouselRef.firstChild.getBoundingClientRect().width;
 
-    if (next + 2 > items.length - 1) {
+    if (next + 1 > items.length - 1) {
       const index = 1;
       carouselRef.scrollTo({ left: width * index, behavior: 'instant' });
-      next = 2;
+      next = 3;
     }
 
     const pos = carouselRef.scrollLeft + width;
@@ -76,10 +76,10 @@ const Testimonios = () => {
     let prev = current - 1;
     const width = carouselRef.firstChild.getBoundingClientRect().width;
 
-    if (prev - 1 < 0) {
+    if (prev - 2 < 0) {
       const index = items.length - 2;
       carouselRef.scrollTo({ left: width * index, behavior: 'instant' });
-      prev = items.length - 4;
+      prev = items.length - 3;
       console.log('lala');
     }
 
