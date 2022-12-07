@@ -98,12 +98,12 @@ const NuestroImpacto = () => {
             <p className="subtitulo">Seguimos dejando huella en pro del emprendimiento local</p>
             <div className="nuestro-impacto__stats">
               <div className={statClass}>
-                <h3>{`+${emprendimientosCounter}`}</h3>
-                <p>{emprendimientos.text}</p>
-              </div>
-              <div className={statClass}>
                 <h3>{`+${feriasCounter}`}</h3>
                 <p>{ferias.text}</p>
+              </div>
+              <div className={statClass}>
+                <h3>{`+${emprendimientosCounter}`}</h3>
+                <p>{emprendimientos.text}</p>
               </div>
               <div className={statClass}>
                 <h3>{`+${traficoCounter}k`}</h3>
