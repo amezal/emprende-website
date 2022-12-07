@@ -5,18 +5,20 @@ const NuestrosObjetivos = () => {
   return (
     <section className="nuestros-objetivos">
       <div className="container">
-        <h2>Nuestro Propósito</h2>
+        <h2>Nuestra historia</h2>
         <div>
           <p className="subtitulo">
-            <b>Promoverlos: </b> creamos espacios para que puedan exhibir y
-            vender sus productos, en: ferias, eventos y medios digitales
+            Programa Emprende nació del deseo de un grupo de mujeres profesionales, que soñaban con dar
+            a conocer el talento de los emprendedores locales, por medio de sus conocimientos y contactos.
+            Motivadas por ese objetivo, en diciembre del 2020 realizaron la primera feria de emprendedores
+            gracias al apoyo de SINSA.
           </p>
           <br />
           <br />
           <p className="subtitulo">
-            <b>Darles herramientas: </b> brindamos contenido educativo en
-            diferentes áreas (finanzas, marketing, diseño, innovación, y más)
-            para ayudarlos a desarrollar su negocio de manera exitosa.
+            Lo que inicialmente iba a ser solo un evento, impactó tanto en los emprendedores, que llevó al
+            equipo a convertirlo en un Programa que promoviera activamente el talento nacional. Hoy Programa
+            Emprende es impulsado por más empresas aliadas y voluntarios que comparten la misma visión.
           </p>
         </div>
       </div>
