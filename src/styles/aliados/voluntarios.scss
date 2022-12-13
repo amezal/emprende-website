@@ -27,6 +27,8 @@
   }
 
   button{
-    @include cta-button(0.45em 2.8em);
+    @include col(center, center);
+    @include cta-button(0.5em 2.8em);
+    font-size: 2rem;
   }
 }

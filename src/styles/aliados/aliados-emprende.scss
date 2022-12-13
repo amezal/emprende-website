@@ -2,7 +2,7 @@
 
 .aliados-emprende {
   margin-top: 20vh;
-
+  margin-bottom: 20px;
   h2 {
     margin-bottom: 7.8rem;
   }
@@ -11,6 +11,14 @@
     width: 80%;
     margin: 0 auto;
   }
+
+  button.cta{
+    @include col(center, center);
+    @include cta-button(0.5em 2.8em);
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+  hr
 
   &__list {
     @include row(space-evenly, center);
