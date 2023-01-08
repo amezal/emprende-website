@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Proyecto Emprende`,
-    siteUrl: `https://www.emprendeca.com`
+    siteUrl: `https://www.wp.emprendeca.com`
   },
   plugins: [
     {
