@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useEffect, useRef, useState } from "react";
+import PlatformImage from "./PlatformImage.js";
 
 const Voluntarios = () => {
   const data = useStaticQuery(graphql`
@@ -24,8 +25,9 @@ const Voluntarios = () => {
       }
     }
   `);
-  console.log(data)
-  const voluntarios = data.allWpVoluntario.nodes.map((node) => node.voluntarios);
+  const voluntarios = data.allWpVoluntario.nodes.map(
+    (node) => node.voluntarios
+  );
   const [active, setActive] = useState(0);
   const [visibleItems, setVisibleItems] = useState(3);
   const [numberOfPages, setNumberOfPages] = useState(2);
@@ -69,25 +71,33 @@ const Voluntarios = () => {
           la comunidad
         </p>
         <div className="voluntarios__carousel" ref={carouselRef}>
-          {data && voluntarios.map((voluntario) => (
-            <div className="voluntario" key={voluntario.nombre}>
-              <GatsbyImage
-                image={voluntario.imagen.localFile.childImageSharp.gatsbyImageData}
-                alt={voluntario.nombre}
-                className="voluntario__img"
-                width={135}
-                height={135}
-              />
-              <div className="voluntario__text">
-                <p>
-                  <b>{voluntario.nombre}</b>
-                </p>
-                <p>
-                  <span>{voluntario.rol}</span>
-                </p>
+          {data &&
+            voluntarios.map((voluntario) => (
+              <div className="voluntario" key={voluntario.nombre}>
+                <GatsbyImage
+                  image={
+                    voluntario.imagen.localFile.childImageSharp.gatsbyImageData
+                  }
+                  alt={voluntario.nombre}
+                  className="voluntario__img"
+                  width={135}
+                  height={135}
+                />
+                <div className="voluntario__text">
+                  <p>
+                    <b>{voluntario.nombre}</b>
+                  </p>
+                  <p>
+                    <span>{voluntario.rol}</span>
+                  </p>
+                  <div className="voluntario__platform">
+                    <a href={voluntario.url} target="_blank">
+                      <PlatformImage platform={voluntario.plataforma} />
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
         <div className="voluntarios__controls">
           {[...Array(numberOfPages)].map((btn, i) => (

@@ -39,7 +39,7 @@ const NicaraguaLoVale = () => {
         <div className="images">
           {
             images.map((image, i) => (
-              <a href={links[i]} key={i}>
+              <a href={links[i]} key={i} target="_blank">
                 <GatsbyImage
                   image={image}
                   className="image"

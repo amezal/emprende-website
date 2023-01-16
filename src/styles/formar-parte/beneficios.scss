@@ -8,19 +8,42 @@
     margin-bottom: 7.8rem;
   }
 
+  .subtitulo {
+    color: $fc-gray;
+    margin-bottom: 15rem;
+  }
+
   &__list {
     margin-bottom: 10rem;
-    @include col(center, center);
-    gap: 5rem;
+    // @include col(center, center);
+    // gap: 5rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 7rem;
 
     .item {
       gap: 2rem;
-      @include row(flex-start, center);
+      @include col(flex-start, center);
+
+      .img {
+        width: 110px;
+        height: 110px;
+      }
+
+      p {
+        color: $fc-gray;
+        width: 20ch;
+        margin-top: 3rem;
+      }
+
     }
   }
 
-  button {
+  .llenar-formulario {
     @include cta-button(0.45em 2.8em);
+    font-size: 2rem;
   }
 
 }

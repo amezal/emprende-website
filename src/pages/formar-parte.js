@@ -49,6 +49,7 @@ const FormarParte = () => {
         <button>{hero.ctaButton}</button>
       </Hero>
       <Requisitos />
+      <hr />
       <Beneficios />
     </Layout>
   )

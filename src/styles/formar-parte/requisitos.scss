@@ -2,20 +2,43 @@
 
 .requisitos {
   margin-top: 20vh;
-
-  h2 {
-    margin-bottom: 7.8rem;
+  margin-bottom: 20rem;
+  .text {
+    margin-left: 8rem;
+  }
+  .container {
+    @include row(center, flex-start)
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 18rem;
-    row-gap: 6rem;
+  h2 {
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+    width: 20ch;
+  }
 
-    .requisito {
-      @include col(center, center);
-    }
+  p.subtitulo {
+    width: 30ch;
+    text-align: start;
+    color: $fc-gray;
+    line-height: 32.58px;
+  }
+
+  ol {
+    font-size: 2rem;
+    color: $fc-primary;
+    margin-top: 5.7rem;
+    line-height: 28.68px;
+    margin-bottom: 7.5rem;
+    list-style-position: inside;
+  }
+
+  .img {
+    width: 526px;
+    height: 618px;
+  }
+
+  .llenar-formulario {
+    @include cta-button(0.75em 3.43em);
+    font-size: 2rem;
   }
 }

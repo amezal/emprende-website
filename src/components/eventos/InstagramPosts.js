@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import InstagramEmbed from 'react-instagram-embed';
+// import InstagramEmbed from 'react-instagram-embed';
 
 const InstagramPosts = () => {
 
   const [posts, setPosts] = useState([]);
-
-  const accessToken = "1232232860643084|02395ad4c467ccc63c70e4b56b0beb29"
 
   useEffect(async () => {
     const res = await axios.get('https://emprende-backend.herokuapp.com/');
@@ -18,7 +16,7 @@ const InstagramPosts = () => {
   return (
     <div className="instagram-posts">
       <div className="container">
-        {
+        {/* {
           posts.map(post => (
             <InstagramEmbed
               url={`https://instagr.am/p/${post}`}
@@ -34,7 +32,7 @@ const InstagramPosts = () => {
               onFailure={() => { }}
             />
           ))
-        }
+        } */}
       </div>
     </div>
   )
