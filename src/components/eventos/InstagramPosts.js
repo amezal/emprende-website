@@ -7,9 +7,9 @@ const InstagramPosts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(async () => {
-    const res = await axios.get('https://emprende-backend.herokuapp.com/');
-    const codes = res.data.edge_owner_to_timeline_media.edges.map(edge => edge.node.shortcode);
-    setPosts([codes[0], codes[1], codes[2]]);
+    // const res = await axios.get('https://emprende-backend.herokuapp.com/');
+    // const codes = res.data.edge_owner_to_timeline_media.edges.map(edge => edge.node.shortcode);
+    // setPosts([codes[0], codes[1], codes[2]]);
 
   }, [])
 

@@ -42,16 +42,6 @@ const Eventos = () => {
   const image = getImage(hero.image.localFile);
   const bgImage = convertToBgImage(image);
 
-  const [events, setEvents] = useState(null);
-
-  useEffect(async () => {
-    const url = 'https://script.google.com/macros/s/AKfycbyllI0NWsGKaFmGA8kFXgmzaajSy4Seq5hUIn6BRVoZTDS56jSFmNRHqqPziWxEGyA-9Q/exec';
-    const e = await axios.get(url)
-    const { data } = e;
-    setEvents(data);
-  }, [])
-
-
   return (
     <Layout>
       <Hero img={bgImage}>
@@ -61,13 +51,7 @@ const Eventos = () => {
         </span>
         <button>{hero.ctaButton}</button>
       </Hero>
-      {events &&
-        <>
-          <ProximosEventos event={events[0]} />
-          <Calendario events={events} />
-        </>
-      }
-      <InstagramPosts />
+      <Calendario />
     </Layout>
   )
 }
