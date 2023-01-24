@@ -9,6 +9,7 @@ import ProximosEventos from '../components/eventos/ProximosEventos';
 import Calendario from '../components/eventos/Calendario';
 import InstagramPosts from '../components/eventos/InstagramPosts';
 import '../styles/style.scss';
+import GaleriaEventos from '../components/eventos/GaleriaEventos';
 
 
 const Eventos = () => {
@@ -52,6 +53,8 @@ const Eventos = () => {
         <button>{hero.ctaButton}</button>
       </Hero>
       <Calendario />
+      <hr />
+      <GaleriaEventos />
     </Layout>
   )
 }

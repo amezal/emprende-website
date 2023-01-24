@@ -72,6 +72,8 @@ const Contacto = () => {
 
       <section className="contacto">
         <div className="container">
+          <h2>¡Hagamos esto juntos!</h2>
+          <p className="subtitulo">Contanos cómo querés apoyar.</p>
           <form onSubmit={callApi}>
             <h4><b>Envianos un mensaje</b></h4>
             <div className="separator">
@@ -79,18 +81,46 @@ const Contacto = () => {
               <input type="text" placeholder="Apellido" name="apellido" />
             </div>
             <input type="text" placeholder="Correo" name="email" />
-            <input type="text" placeholder="Filtro" name="filtro" />
+            <select name="select1">
+              <option disabled selected>¿Cómo querés unirte?</option>
+              <option value="Empresa aliada">Empresa aliada</option>
+              <option value="Voluntario">Voluntario</option>
+            </select>
+            <select name="select2">
+              <option disabled selected>¿De qué manera te gustaría colaborar?</option>
+              <option value="Organizando ferias y eventos">
+                Organizando ferias y eventos
+              </option>
+              <option value="Brindando espacio físico para los emprendedores">
+                Brindando espacio físico para los emprendedores
+              </option>
+              <option value="Impartiendo webinars o talleres">
+                Impartiendo webinars o talleres
+              </option>
+              <option value="Conectándonos con oportunidades">
+                Conectándonos con oportunidades
+              </option>
+              <option value="Financiando económicamente las actividades">
+                Financiando económicamente las actividades
+              </option>
+              <option value="Promoviendo nuestros productos locales">
+                Promoviendo nuestros productos locales
+              </option>
+              <option value="Donando tu talento como voluntario">
+                Donando tu talento como voluntario
+              </option>
+            </select>
             <textarea name="mensaje" placeholder="Mensaje" cols="30" rows="6" required=""></textarea>
-            <button type="submit">Button</button>
+            <button type="submit">Enviar solicitud</button>
           </form>
 
-          <h3>emprende.programa@gmail.com</h3>
+          <h3 className="email">emprende.programa@gmail.com</h3>
 
           <div className="socials">
-            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/emprende.ca/"><FaInstagram size="43px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca"><FaFacebookSquare size="43px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.tiktok.com/@emprende.ca"><FaTiktok size="43px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw"><FaYoutube size="43px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/emprende.ca/"><FaInstagram size="60px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca"><FaFacebookSquare size="60px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.tiktok.com/@emprende.ca"><FaTiktok size="60px" /> </a>
+            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw"><FaYoutube size="60px" /> </a>
           </div>
 
         </div>

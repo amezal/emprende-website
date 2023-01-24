@@ -1,0 +1,58 @@
+@use '../variables'as *;
+
+.galeria-eventos {
+  margin-top: 13rem;
+
+
+  .subtitulo { 
+    margin-top: 2rem;
+    line-height: 32.58px;
+    width: 40ch;
+  }
+
+  .galeria {
+    @include row(center, center);
+    gap: 2.5rem;
+    margin-top: 8rem;
+    margin-bottom: 15rem;
+
+    .main {
+      &__image {
+        width: 750px;
+        height: 580px;
+        border-radius: 10px;
+      }
+    }
+
+    .scroll {
+      @include col(flex-start, center);
+      gap: 2rem;
+      height: 580px;
+      overflow-y: scroll;
+      padding-right: .5rem;
+
+      &::-webkit-scrollbar {
+        width: .6rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $fc-gray;
+        border-radius: 80px;
+      }
+      
+      &__image {
+        width: 100px;
+        min-height: 100px;
+        max-height: 100px;
+        border-radius: 10px;
+        filter: brightness(0.5);
+        cursor: pointer;
+      }
+
+      .selected {
+        filter: none;
+        border: 1px solid $bg-secondary;
+      }
+    }
+  }
+}

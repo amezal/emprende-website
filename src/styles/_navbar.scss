@@ -33,4 +33,20 @@
     }
   }
 
+  .mobile {
+    display: none;
+  }
+
+  @media (max-width: $bp-mobile) {
+    height: 128px;
+    
+    .container {
+      display: none;
+    }
+
+    .mobile {
+      @include row(space-between, center);
+    }
+  }
+
 }
