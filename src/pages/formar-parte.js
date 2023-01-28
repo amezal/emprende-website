@@ -18,15 +18,29 @@ const FormarParte = () => {
         page
         image{
           localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 1920, 
-                  placeholder: BLURRED, 
-                  formats: [AUTO, WEBP, AVIF]
-                  blurredOptions:{width:100}
-                )
-              }
+            childImageSharp {
+              gatsbyImageData(
+                width: 1920, 
+                placeholder: NONE, 
+                formats: [AUTO, WEBP, AVIF]
+                blurredOptions:{width:50}
+                quality:100
+              )
             }
+          }
+        }
+        imageMobile{
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 568, 
+                placeholder: NONE, 
+                formats: [AUTO, WEBP, AVIF]
+                blurredOptions:{width:50}
+                quality:100
+              )
+            }
+          }
         }
       }
     }

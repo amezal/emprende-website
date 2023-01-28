@@ -18,21 +18,34 @@ const SobreNosotros = () => {
         page
         image{
           localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 1920, 
-                  placeholder: NONE, 
-                  formats: [AUTO, WEBP, AVIF]
-                  blurredOptions:{width:100}
-                  quality:100
-                )
-              }
+            childImageSharp {
+              gatsbyImageData(
+                width: 1920, 
+                placeholder: NONE, 
+                formats: [AUTO, WEBP, AVIF]
+                blurredOptions:{width:50}
+                quality:100
+              )
             }
+          }
+        }
+        imageMobile{
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 568, 
+                placeholder: NONE, 
+                formats: [AUTO, WEBP, AVIF]
+                blurredOptions:{width:50}
+                quality:100
+              )
+            }
+          }
         }
       }
     }
   }
-  `)
+  `);
   const hero = data.wpHero.hero;
   
   return (
@@ -41,9 +54,9 @@ const SobreNosotros = () => {
         data &&
         <Hero hero={hero}/>
       }
-      <NuestrosObjetivos />
+      {/* <NuestrosObjetivos /> */}
       <hr />
-      <Equipo />
+      {/* <Equipo /> */}
     </Layout>
   )
 }

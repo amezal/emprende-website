@@ -5,10 +5,18 @@ import { convertToBgImage } from "gbimage-bridge";
 
 const Hero = ({ hero }) => {
   const [loaded, setLoaded] = useState(false);
-
+  console.log(hero)
   const image = getImage(hero.image.localFile);
+  const imageMobile = getImage(hero.imageMobile.localFile);
   const bgImage = convertToBgImage(image);
-  hero.img = bgImage;
+  const bgImageMobile = convertToBgImage(imageMobile);
+  hero.sources = [
+    bgImage.fluid,
+    {
+      ...bgImageMobile.fluid,
+      media: `(max-width: 568px)`,
+    },
+  ]
 
   useEffect(() => {
     setLoaded(true);
@@ -18,7 +26,7 @@ const Hero = ({ hero }) => {
     <BackgroundImage
       Tag="section"
       className="hero2"
-      {...hero.img}
+      fluid={hero.sources}
       preserveStackingContext
     >
       <div
