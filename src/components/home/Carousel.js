@@ -30,8 +30,8 @@ const Carousel = ({ data }) => {
 
   //autoplay
   useEffect(() => {
-    // const id = setInterval(nextSlide, 7000);
-    // return () => clearInterval(id);
+    const id = setInterval(nextSlide, 7000);
+    return () => clearInterval(id);
   })
 
   useEffect(() => {
