@@ -49,4 +49,51 @@
     }
   }
 
+  @media (max-width: $bp-mobile) {
+    .container {
+      @include col(center, center);
+      text-align: center;
+    }
+    
+    br {
+      display: none;
+    }
+
+    &__left {
+      @include col(center, center);
+      margin-bottom: 3.5rem;
+
+      .img {
+        width: 40px;
+        height: 40px;
+        margin-top: 5rem;
+      }
+
+      h3 {
+        width: 100%;
+        font-size: 2.7rem;
+        line-height: 32.91px;
+      }
+
+      button {
+        font-size: 1.8rem;
+        width: 100%;
+        height: 5.2rem;
+      }
+    }
+
+    &__right {
+      @include col(center, center);
+      text-align: center;
+      width: 100%;
+
+      p {
+        margin-bottom: 1rem;
+      }
+      p, b {
+        font-size: 1rem;
+        line-height: 12.19px;
+      }
+    }
+  }
 }

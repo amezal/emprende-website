@@ -19,10 +19,38 @@ const Footer = () => {
         <div className="footer__right">
           <Link to="/contacto">Contactanos</Link>
           <div className="footer__right__socials">
-            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/emprende.ca/"><FaInstagram size="25px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca"><FaFacebookSquare size="25px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.tiktok.com/@emprende.ca"><FaTiktok size="25px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw"><FaYoutube size="25px" /> </a>
+          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca">
+                <StaticImage
+                  src="../images/facebook-round.svg"
+                  height="25"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.tiktok.com/@emprende.ca">
+                <StaticImage
+                  src="../images/tiktok-round.svg"
+                  height="25"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw">
+                <StaticImage
+                  src="../images/youtube-round.svg"
+                  height="25"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/emprende.ca/">
+                <StaticImage
+                  src="../images/instagram-round.svg"
+                  height="25"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
           </div>
           <p>2022 Programa Emprende. Todos los derechos reservados.</p>
           <b>Desarrollado por: Sidekick & Armando Meza</b>
