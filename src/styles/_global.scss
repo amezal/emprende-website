@@ -68,6 +68,11 @@ hr {
 
 @media (max-width: $bp-mobile) {
   body {
+    .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
     h1 {
       font-size: 3rem;
       line-height: 36.57px;
@@ -80,6 +85,10 @@ hr {
 
     hr {
       width: 70%
+    }
+
+    p, a {
+      font-size: 1.8rem;
     }
   }
 }

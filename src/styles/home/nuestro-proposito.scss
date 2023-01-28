@@ -18,4 +18,17 @@
     width: 46rem;
     text-align: left;
   }
+
+  @media (max-width: $bp-mobile) {
+    .container {
+      @include col(center, center);
+      gap: 4rem;
+      text-align: center;
+    }
+
+    p.subtitulo {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
