@@ -117,7 +117,7 @@ $controls-color: #C4C4C4;
       @include row(center, center);
       position: absolute;
       bottom: 11rem;
-      right: 50%;
+      right: 45%;
       top: unset;
       gap: 1.6rem;
     }
@@ -130,6 +130,7 @@ $controls-color: #C4C4C4;
   
       .container {
         padding-left: 0;
+        padding-right: 0;
         padding-top: 4rem;
         padding-bottom: 7rem;
         justify-content: space-between;
