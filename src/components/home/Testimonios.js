@@ -41,8 +41,11 @@ const Testimonios = () => {
   const [carouselRef, setCarouselRef] = useState(null);
   const [items, setItems] = useState(testimonials);
   let mobileOffset = 0;
-  if (window.innerWidth <= 568) {
-    mobileOffset = 1;
+
+  if (typeof window !== "undefined") {
+    if (window.innerWidth <= 568) {
+      mobileOffset = 1;
+    }
   }
 
   useEffect(() => {
