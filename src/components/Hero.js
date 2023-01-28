@@ -5,7 +5,6 @@ import { convertToBgImage } from "gbimage-bridge";
 
 const Hero = ({ hero }) => {
   const [loaded, setLoaded] = useState(false);
-  console.log(hero)
   const image = getImage(hero.image.localFile);
   const imageMobile = getImage(hero.imageMobile.localFile);
   const bgImage = convertToBgImage(image);
@@ -28,11 +27,14 @@ const Hero = ({ hero }) => {
       className="hero2"
       fluid={hero.sources}
       preserveStackingContext
+      title={hero.image.altText}
+      alt={hero.image.altText}
     >
       <div
         className={`container hero2__content${
           loaded ? " hero2__content--current" : ""
         }`}
+        title=""
       >
         <span>
           <h1

@@ -17,6 +17,7 @@ const SobreNosotros = () => {
         fontColor
         page
         image{
+          altText
           localFile {
             childImageSharp {
               gatsbyImageData(
@@ -54,9 +55,9 @@ const SobreNosotros = () => {
         data &&
         <Hero hero={hero}/>
       }
-      {/* <NuestrosObjetivos /> */}
+      <NuestrosObjetivos />
       <hr />
-      {/* <Equipo /> */}
+      <Equipo />
     </Layout>
   )
 }

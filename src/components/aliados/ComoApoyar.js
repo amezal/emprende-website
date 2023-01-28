@@ -10,6 +10,8 @@ const ComoApoyar = () => {
                 quality={100}
                 className='como-apoyar__img'
                 width={420}
+                title="Killari Store - Josselyn Cabrera"
+                alt="Killari Store - Josselyn Cabrera"
               />
         <div className="como-apoyar__list">
           <h2>Cómo apoyar</h2>

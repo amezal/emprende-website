@@ -76,6 +76,7 @@ const Equipo = () => {
             <div className="integrante" key={integrante.name}>
               <GatsbyImage
                 image={integrante.img.localFile.childImageSharp.gatsbyImageData}
+                title={integrante.name}
                 alt={integrante.name}
                 className="integrante__img"
                 width={175}

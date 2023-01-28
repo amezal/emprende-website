@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { FaInstagram, FaFacebookSquare, FaTiktok, FaYoutube } from 'react-icons/fa';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const Footer = () => {

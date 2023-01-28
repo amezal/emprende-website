@@ -17,6 +17,7 @@ const FormarParte = () => {
         fontColor
         page
         image{
+          altText
           localFile {
             childImageSharp {
               gatsbyImageData(

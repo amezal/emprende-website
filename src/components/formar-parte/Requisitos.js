@@ -9,6 +9,8 @@ const Requisitos = () => {
         <StaticImage
           className="img"
           src="../../images/Requisitos.png"
+          title="Sugar Twist Bakery - Stephanie Jerez"
+          alt="Sugar Twist Bakery - Stephanie Jerez"
         />
         <div className="text">
           <h2>Requisitos para emprendedores</h2>

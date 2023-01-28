@@ -19,6 +19,7 @@ const Aliados = () => {
         fontColor
         page
         image{
+          altText
           localFile {
             childImageSharp {
               gatsbyImageData(

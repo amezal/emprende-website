@@ -77,6 +77,7 @@ const Voluntarios = () => {
                   image={
                     voluntario.imagen.localFile.childImageSharp.gatsbyImageData
                   }
+                  title={voluntario.nombre}
                   alt={voluntario.nombre}
                   className="voluntario__img"
                   width={135}

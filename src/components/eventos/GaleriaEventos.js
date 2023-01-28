@@ -13,6 +13,7 @@ function GaleriaEventos() {
         sort: {fields: title, order: ASC}
       ) {
         nodes {
+          altText
           title
           localFile {
             childImageSharp {
@@ -24,9 +25,10 @@ function GaleriaEventos() {
     }
   `);
 
-  const images = data.allWpMediaItem.nodes.map(node => (
-    node.localFile.childImageSharp.gatsbyImageData
-  ))
+  const images = data.allWpMediaItem.nodes.map(node => ({
+    src: node.localFile.childImageSharp.gatsbyImageData,
+    alt: node.altText || 'Evento'
+  }))
 
   const changeSelectedImage = (e) => {
     // TODO
@@ -43,8 +45,10 @@ function GaleriaEventos() {
           <div className="main">
             <GatsbyImage
               className="main__image"
-              image={images[selectedImage]}
-              atl="evento"
+              image={images[selectedImage].src}
+              title={images[selectedImage].alt}
+              alt={images[selectedImage].alt}
+              loading="eager"
             />
           </div>
           <div className="scroll">
@@ -53,7 +57,9 @@ function GaleriaEventos() {
                 <div onClick={() => setSelectedImage(index)} key={index}>
                   <GatsbyImage
                     className={`scroll__image ${index === selectedImage ? 'selected': ''}`}
-                    image={image}
+                    image={image.src}
+                    title={image.alt}
+                    alt={image.alt}
                     />
                 </div>
               ))

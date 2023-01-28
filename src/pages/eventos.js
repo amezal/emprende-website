@@ -22,6 +22,7 @@ const Eventos = () => {
         fontColor
         page
         image{
+          altText
           localFile {
             childImageSharp {
               gatsbyImageData(

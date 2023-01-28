@@ -14,6 +14,7 @@ const Hero = () => {
               fontColor
               page
               image {
+                altText
                 localFile {
                   childImageSharp {
                     gatsbyImageData(
