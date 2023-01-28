@@ -116,8 +116,10 @@ $controls-color: #C4C4C4;
     .controls {
       @include row(center, center);
       position: absolute;
-      bottom: 7rem;
-      right: 45%;
+      bottom: 11rem;
+      right: 50%;
+      top: unset;
+      gap: 1.6rem;
     }
 
     &__carousel {
