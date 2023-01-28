@@ -26,6 +26,18 @@ const Hero = () => {
                   }
                 }
               }
+              imageMobile {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(
+                      placeholder: DOMINANT_COLOR
+                      formats: [AUTO, WEBP, AVIF]
+                      blurredOptions: {width: 50}
+                      quality:100
+                    )
+                  }
+                }
+              }
             }
           }
         }
@@ -34,7 +46,6 @@ const Hero = () => {
   );
 
   const heros = data.allWpHero.nodes.map(node => node.hero);
-  console.log(heros);
   return (
     <section className="hero">
       <Carousel data={heros} />

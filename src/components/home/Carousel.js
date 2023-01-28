@@ -4,15 +4,23 @@ import { convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
 
 const Carousel = ({ data }) => {
-
   const [heros, setHeros] = useState(data.map(hero => {
     const image = getImage(hero.image.localFile);
+    const imageMobile = getImage(hero.imageMobile.localFile);
     const bgImage = convertToBgImage(image);
+    const bgImageMobile = convertToBgImage(imageMobile);
+    const sources = [
+      bgImage.fluid,
+      {
+        ...bgImageMobile.fluid,
+        media: `(max-width: 568px)`,
+      },
+    ]
     return {
       h1: hero.ctaText,
       cta: hero.ctaButton,
       fc: hero.fontColor,
-      img: bgImage,
+      sources: sources
     }
   }))
 
@@ -22,8 +30,8 @@ const Carousel = ({ data }) => {
 
   //autoplay
   useEffect(() => {
-    const id = setInterval(nextSlide, 7000);
-    return () => clearInterval(id);
+    // const id = setInterval(nextSlide, 7000);
+    // return () => clearInterval(id);
   })
 
   useEffect(() => {
@@ -70,16 +78,18 @@ const Carousel = ({ data }) => {
           <BackgroundImage
             Tag="div"
             className={`hero__carousel__bg`}
-            {...hero.img}
             id={hero.cta + i}
             key={hero.cta + i}
+            fluid={hero.sources}
             preserveStackingContext
           >
             <div className={`container hero__carousel__content ${`hero__carousel__content${current === i ? '--current' : ''}`}`}>
               <span>
                 <h1 dangerouslySetInnerHTML={{ __html: `${hero.h1}` }} style={{ color: hero.fc }}></h1>
               </span>
-              <button>{hero.cta}</button>
+              <span className="cta-container">
+                <button>{hero.cta}</button>
+              </span>
             </div>
           </BackgroundImage>
         ))}

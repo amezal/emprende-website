@@ -39,13 +39,83 @@
 
   @media (max-width: $bp-mobile) {
     height: 128px;
+    padding: 0;
     
     .container {
       display: none;
     }
 
     .mobile {
+      display: block;
+    }
+
+    .bar {
       @include row(space-between, center);
+      margin-top: 6.8rem;
+      padding-right: 2.5rem;
+      padding-left: 2.5rem;
+    }
+
+    .menu {
+      background-color: $bg-secondary;
+      top: -100vh;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      max-height: 100vh;
+      transition: top 0.5s ease-in-out;
+
+      &.show {
+        top: 0;
+      }
+    }
+
+    .menu-container {
+      @include col(center, center);
+      overflow-y: scroll;
+      width: 100%;
+      height: 100svh;
+      padding: 6rem 4rem;
+    }
+
+    .close {
+      @include row(space-between, center);
+      color: $fc-secondary;
+      width: 100%;
+
+      button {
+        @include row(space-between, center);
+        font-size: 1.4rem;
+        gap: 1.2rem;
+        border: none;
+      }
+    }
+
+    .links {
+      @include col(center, center);
+      color: $fc-secondary;
+      margin-top: 8rem;
+      gap: 3rem;
+      a {
+        line-height: 36px;
+        font-size: 3rem;
+      }
+    }
+
+    .contactanos {
+      @include cta-button(unset);
+      font-weight: 600;
+      width: 100%;
+      max-width: 30rem;
+      font-size: 1.8rem;
+      min-height: 5rem;
+      margin-top: 8rem;
+    }
+
+    .socials {
+      @include row(center, center);
+      gap: 1.6rem;
+      margin-top: 8rem;
     }
   }
 

@@ -35,7 +35,7 @@ footer .container {
 
 h1 {
   font-size: 5.4rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 67px;
 }
 
@@ -64,4 +64,22 @@ hr {
   width: 1080px;
   margin: auto;
   border-color: #DEDEDE;
+}
+
+@media (max-width: $bp-mobile) {
+  body {
+    h1 {
+      font-size: 3rem;
+      line-height: 36.57px;
+    }
+  
+    h2 {
+      font-size: 3rem;
+      line-height: 36.57px;
+    }
+
+    hr {
+      width: 70%
+    }
+  }
 }

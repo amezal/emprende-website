@@ -69,21 +69,21 @@ $controls-color: #C4C4C4;
       height: 520px;
 
       h1 {
-        font-size: 5.4rem;
-        font-weight: 700;
-        line-height: 67px;
         margin-bottom: 5vh;
         transform: translateY(-3rem);
         opacity: 0;
         transition: all 1.2s ease-in;
       }
 
-      button {
-        @include cta-button(0.6em 3.85em);
-        font-size: 2rem;
+      .cta-container {
         transform: translateY(-4rem);
         opacity: 0;
         transition: all 1.4s ease-in;
+      }
+
+      button {
+        @include cta-button(0.5em 3.85em);
+        font-size: 2rem;
       }
 
       &--current {
@@ -93,7 +93,7 @@ $controls-color: #C4C4C4;
           opacity: 1;
         }
 
-        button {
+        .cta-container {
           transition: all 1.4s ease-in-out;
           transform: translateY(0);
           opacity: 1;
@@ -107,6 +107,45 @@ $controls-color: #C4C4C4;
       &__content {
         scroll-snap-align: center;
         height: 680px;
+      }
+    }
+  }
+  
+  @media (max-width: $bp-mobile) {
+
+    .controls {
+      @include row(center, center);
+      position: absolute;
+      bottom: 7rem;
+      right: 45%;
+    }
+
+    &__carousel {
+      width: 100%;
+      overflow-x: hidden;
+      position: relative;
+      @include row(stretch, center);
+  
+      .container {
+        padding-left: 0;
+        padding-top: 4rem;
+        padding-bottom: 7rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__content {
+        height: 460px;
+        text-align: center;
+
+        h1 {
+          margin-bottom: 5vh;
+        }
+  
+        button {
+          @include cta-button(0.6em 3.85em);
+          font-size: 1.7rem;
+        }
       }
     }
   }
