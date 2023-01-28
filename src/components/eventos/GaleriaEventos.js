@@ -9,7 +9,7 @@ function GaleriaEventos() {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allWpMediaItem(
-        filter: {title: {regex: "/eventos/"}}
+        filter: {title: {regex: "/galeria-eventos/"}}
         sort: {fields: title, order: ASC}
       ) {
         nodes {
