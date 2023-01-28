@@ -54,8 +54,9 @@ const NicaraguaLoVale = () => {
         <h2>
           #Nicaragua<span className="lo-vale">LoVale</span>
         </h2>
-        <p>
-          Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo.
+        <p className="subtitulo">
+          Conocé el valor que tienen los productos locales
+          a través de nuestra última campaña.
         </p>
         <div className="images" ref={carouselRef}>
           {images.map((image, i) => (

@@ -95,7 +95,7 @@ const NuestroImpacto = () => {
         <section className="nuestro-impacto">
           <div ref={myRef} className="container">
             <h2>Nuestro Impacto</h2>
-            <p className="subtitulo">Seguimos dejando huella en pro del emprendimiento local</p>
+            <p className="subtitulo">Seguimos dejando huella en pro del emprendimiento local.</p>
             <div className="nuestro-impacto__stats">
               <div className={statClass}>
                 <h3>{`+${feriasCounter}`}</h3>
@@ -114,7 +114,7 @@ const NuestroImpacto = () => {
             <hr />
             
             <h2>Conocé más de nosotros</h2>
-            <p className="subtitulo">Te contamos cuál es nuestro propósito y lo que hacemos para lograrlo</p>
+            <p className="subtitulo">Te contamos cuál es nuestro enfoque y lo que hacemos para lograrlo</p>
             <div className="video">
               <iframe width="1350" height="770" src="https://www.youtube.com/embed/Scg6uHLQ0GI"
                 title="YouTube video player" frameborder="0"

@@ -10,6 +10,11 @@
     }
   }
 
+  .subtitulo {
+    width: 40ch;
+    margin-top: 5rem;
+  }
+
   .images {
     margin-top: 10rem;
     @include row(center, center);
@@ -62,6 +67,11 @@
     h2 {
       margin-bottom: 4rem;
     }
+
+    .subtitulo {
+      width: 100%;
+    }
+
     .images {
       justify-content: flex-start;
       width: 100%;
