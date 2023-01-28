@@ -7,7 +7,6 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import ProximosEventos from '../components/eventos/ProximosEventos';
 import Calendario from '../components/eventos/Calendario';
-import InstagramPosts from '../components/eventos/InstagramPosts';
 import '../styles/style.scss';
 import GaleriaEventos from '../components/eventos/GaleriaEventos';
 
@@ -16,7 +15,7 @@ const Eventos = () => {
 
   const data = useStaticQuery(graphql`
   query{
-    wpHero(hero: {page: {eq: "sobre-nosotros"}}) {
+    wpHero(hero: {page: {eq: "eventos"}}) {
       hero {
         ctaButton
         ctaText

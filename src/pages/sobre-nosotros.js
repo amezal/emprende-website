@@ -2,8 +2,6 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import { useStaticQuery, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
 import NuestrosObjetivos from '../components/sobre-nosotros/NuestrosObjetivos';
 import Equipo from '../components/sobre-nosotros/Equipo';
 import '../styles/style.scss';
@@ -43,9 +41,9 @@ const SobreNosotros = () => {
         data &&
         <Hero hero={hero}/>
       }
-      {/* <NuestrosObjetivos /> */}
+      <NuestrosObjetivos />
       <hr />
-      {/* <Equipo /> */}
+      <Equipo />
     </Layout>
   )
 }

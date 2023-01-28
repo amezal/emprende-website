@@ -12,7 +12,7 @@ const Contacto = () => {
 
   const data = useStaticQuery(graphql`
   query{
-    wpHero(hero: {page: {eq: "sobre-nosotros"}}) {
+    wpHero(hero: {page: {eq: "contacto"}}) {
       hero {
         ctaButton
         ctaText
@@ -35,9 +35,6 @@ const Contacto = () => {
   }
   `)
   const hero = data.wpHero.hero;
-
-  const image = getImage(hero.image.localFile);
-  const bgImage = convertToBgImage(image);
 
   const callApi = async (e) => {
     e.preventDefault();

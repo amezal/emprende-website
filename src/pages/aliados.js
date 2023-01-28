@@ -1,7 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Beneficios from '../components/aliados/Beneficios';
