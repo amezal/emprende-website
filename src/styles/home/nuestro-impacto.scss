@@ -103,4 +103,41 @@
       height: 30vw;
     }
   }
+
+  @media (max-width: $bp-mobile) {
+    margin-top: 10rem;
+    text-align: center;
+
+    &__stats {
+      @include col(flex-start, center);
+      margin-bottom: 10rem;
+      gap: 8rem;
+    }
+
+    p.subtitulo {
+      width: 100%;
+      margin-top: none;
+    }
+
+    h3 {
+      font-size: 11.5rem;
+    }
+
+    h2 {
+      margin-bottom: 4rem;
+      &:last-of-type {
+        margin-bottom: 4rem;
+      }
+    }
+
+    .video {
+      margin-top: 6rem;
+      margin-bottom: 10rem;
+      iframe {
+        width: 90vw;
+        max-width: 90vw;
+        height: 50vw;
+      }
+    }
+  }
 }

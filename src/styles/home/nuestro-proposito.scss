@@ -20,6 +20,9 @@
   }
 
   @media (max-width: $bp-mobile) {
+    margin-top: 12rem;
+    margin-bottom: 8rem;
+
     .container {
       @include col(center, center);
       gap: 4rem;
