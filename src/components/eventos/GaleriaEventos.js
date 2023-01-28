@@ -28,7 +28,9 @@ function GaleriaEventos() {
     node.localFile.childImageSharp.gatsbyImageData
   ))
 
-  const changeSelectedImage = (e) => {console.log(e)}
+  const changeSelectedImage = (e) => {
+    // TODO
+  }
 
   return (
     <section className="galeria-eventos">

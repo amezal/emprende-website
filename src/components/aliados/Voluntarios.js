@@ -37,7 +37,6 @@ const Voluntarios = () => {
     let visible = 3;
     if (window.outerWidth <= 568) {
       visible = 1;
-      console.log(voluntarios.length - visible + 1);
     } else if (window.outerWidth <= 1024) {
       visible = 2;
     } else {

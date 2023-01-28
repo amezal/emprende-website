@@ -53,8 +53,6 @@ const Contacto = () => {
     const queryString = Object.keys(body).map((query) => (`${query}=${body[query]}&`)).join('');
 
     const res = await axios.get(`${url}?${queryString}`)
-    console.log(res);
-
   }
 
   return (

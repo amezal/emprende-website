@@ -40,9 +40,13 @@ const Equipo = () => {
 
   const setSlides = () => {
     let visible = 3;
-    if (window.outerWidth <= 568) { visible = 1; console.log(equipo.length - visible + 1) }
-    else if (window.outerWidth <= 1024) { visible = 2 }
-    else { visible = 3 }
+    if (window.outerWidth <= 568) {
+      visible = 1;
+    } else if (window.outerWidth <= 1024) {
+      visible = 2;
+    } else {
+      visible = 3;
+    }
 
     //number of pages
     const nop = equipo.length - visible + 1;

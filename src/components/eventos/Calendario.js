@@ -22,7 +22,6 @@ const Calendario = () => {
   const events = data.allWpEvento.nodes.map(node => node.eventos);
 
   const [displayedEvent, setDisplayedEvent] = useState(events[0]);
-  // console.log(moment(displayedEvent.start.dateTime).format('dddd'));
 
   const changeDate = (date) => {
     const event = events.find(event => moment(date).isSame(event.date, 'day'))
