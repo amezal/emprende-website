@@ -114,6 +114,13 @@
       gap: 8rem;
     }
 
+    &__stat {
+      width: 100%;
+      p {
+        width: 100%;
+      }
+    }
+
     p.subtitulo {
       width: 100%;
       margin-top: none;

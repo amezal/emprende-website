@@ -22,4 +22,59 @@
       height: 300px;
     }
   }
+
+  .controls {
+    display: none;
+    position: relative;
+    right: 2vw;
+    top: 50%;
+    z-index: 2;
+    gap: 1.3rem;
+    background-color: red;
+
+    button {
+      cursor: pointer;
+
+      &__slider:hover,
+      &__slider:active {
+        background: #C4C4C4;
+      }
+    }
+
+    &__slider {
+      width: 1.3rem;
+      height: 1.3rem;
+      background: transparent;
+      border-radius: 100%;
+      border: 2px solid #C4C4C4;
+
+      &--current,
+      &:hover {
+        width: 1.3rem;
+        height: 1.3rem;
+        background: #C4C4C4;
+        border: 2px solid #C4C4C4;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    .images {
+      justify-content: flex-start;
+      width: 100%;
+      overflow-x: hidden;
+      scroll-snap-type: x mandatory;
+
+      .image {
+        scroll-snap-align: start;
+        width: calc(100vw - 8rem);
+        height: calc(100vw - 8rem);
+      }
+    }
+
+    .controls {
+      @include row(center, center)
+    }
+  }
 }
