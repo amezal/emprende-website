@@ -24,13 +24,10 @@
   }
 
   .controls {
+    margin-top: 5.5rem;
     display: none;
     position: relative;
-    right: 2vw;
-    top: 50%;
-    z-index: 2;
-    gap: 1.3rem;
-    background-color: red;
+    gap: 2rem;
 
     button {
       cursor: pointer;
@@ -42,16 +39,16 @@
     }
 
     &__slider {
-      width: 1.3rem;
-      height: 1.3rem;
+      width: 1.6rem;
+      height: 1.6rem;
       background: transparent;
       border-radius: 100%;
       border: 2px solid #C4C4C4;
 
       &--current,
       &:hover {
-        width: 1.3rem;
-        height: 1.3rem;
+        width: 1.6rem;
+        height: 1.6rem;
         background: #C4C4C4;
         border: 2px solid #C4C4C4;
         border-radius: 100%;
@@ -60,6 +57,11 @@
   }
 
   @media (max-width: $bp-mobile) {
+    margin-bottom: 10rem;
+
+    h2 {
+      margin-bottom: 4rem;
+    }
     .images {
       justify-content: flex-start;
       width: 100%;

@@ -40,9 +40,12 @@ const Testimonios = () => {
   const [current, setCurrent] = useState(Math.round(testimonials.length / 2));
   const [carouselRef, setCarouselRef] = useState(null);
   const [items, setItems] = useState(testimonials);
+  let mobileOffset = 0;
+  if (window.innerWidth <= 568) {
+    mobileOffset = 1;
+  }
 
   useEffect(() => {
-    console.log(items);
     if (myRef.current) {
       setCarouselRef(myRef.current);
       const width = myRef.current.firstChild.getBoundingClientRect().width;
@@ -52,7 +55,7 @@ const Testimonios = () => {
       const last = arr[arr.length - 1];
       const stl = arr[arr.length - 2];
       setItems([stl, last, ...arr, first, second]);
-      myRef.current.scrollTo({ left: width, behavior: 'instant' });
+      myRef.current.scrollTo({ left: width * (mobileOffset + 1), behavior: 'instant' });
     }
   }, [myRef])
 
@@ -63,7 +66,9 @@ const Testimonios = () => {
 
     if (next + 1 > items.length - 1) {
       const index = 1;
-      carouselRef.scrollTo({ left: width * index, behavior: 'instant' });
+      carouselRef.scrollTo({ 
+        left: width * (index + mobileOffset), 
+        behavior: 'instant' });
       next = 3;
     }
 
@@ -78,15 +83,13 @@ const Testimonios = () => {
 
     if (prev - 2 < 0) {
       const index = items.length - 2;
-      carouselRef.scrollTo({ left: width * index, behavior: 'instant' });
+      carouselRef.scrollTo({ left: width * (index + mobileOffset), behavior: 'instant' });
       prev = items.length - 3;
-      console.log('lala');
     }
 
     const pos = carouselRef.scrollLeft - width;
     carouselRef.scrollTo({ left: pos, behavior: 'smooth' });
     setCurrent(prev);
-    console.log(prev);
   }
 
 
@@ -96,7 +99,7 @@ const Testimonios = () => {
         <h2>Logros de nuestros emprendedores</h2>
         <p className="subtitulo">
           El apoyo de nuestros aliados ha impactado
-          la vida y economía de muchas familias
+          la vida y economía de muchas familias.
         </p>
       </div>
       <div className="testimonials__carousel" ref={myRef}>

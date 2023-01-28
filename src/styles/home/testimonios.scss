@@ -11,14 +11,14 @@
 
   .container {
     margin-bottom: 8rem;
-
-    .subtitulo {
-      color: $fc-gray;
-      width: 40ch;
-      margin-top: 3rem;
-    }
   }
 
+  .subtitulo {
+    color: $fc-gray;
+    width: 40ch;
+    margin-top: 3rem;
+  }
+  
   &__carousel {
     @include row(stretch, center);
     overflow-x: hidden;
@@ -40,7 +40,7 @@
 
   &__item {
     @include col(center, center);
-    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
     border-radius: 34px;
     color: $fc-gray;
     background-color: $bg-primary;
@@ -100,6 +100,78 @@
 
     .next-slide {
       right: 5%;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+    h2 {
+      width: 100%;
+    }
+
+    .subtitulo {
+      width: 100%;
+      margin-top: 4rem;
+    }
+
+    &__carousel {
+      justify-content: flex-start;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    &__item {
+      width: calc(100vw - 8rem);
+      min-width: calc(100vw - 8rem);
+      height: 45rem;
+      border-radius: 18px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+      padding-left: 4rem;
+      padding-right: 4rem;
+
+      &__img {
+        width: 130px;
+        height: 130px;
+        top: -45px;
+      }
+
+      &__stars {
+        gap: 1.4rem;
+        margin-top: 12rem;
+
+        svg {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+
+      p {
+        font-size: 1.8rem;
+        line-height: 21.94px;
+        width: 100%;
+        margin-top: 4rem;
+      }
+    }
+    
+    .controls {
+      bottom: 3.5rem;
+      top: unset;
+    }
+
+    .prev-slide {
+      left: 30%;
+    }
+
+    .next-slide {
+      right: 30%;
     }
   }
 }
