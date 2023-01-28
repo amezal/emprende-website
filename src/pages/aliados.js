@@ -38,17 +38,12 @@ const Aliados = () => {
   `)
   const hero = data.wpHero.hero;
 
-  const image = getImage(hero.image.localFile);
-  const bgImage = convertToBgImage(image);
   return (
     <Layout>
-      <Hero img={bgImage}>
-        <span>
-          <h1 dangerouslySetInnerHTML={{ __html: `${hero.ctaText}` }} style={{ color: hero.fontColor }}>
-          </h1>
-        </span>
-        <button>{hero.ctaButton}</button>
-      </Hero>
+      {
+        data &&
+        <Hero hero={hero}/>
+      }
       <Beneficios />
       <hr />
       <ComoApoyar />

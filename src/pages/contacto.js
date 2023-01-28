@@ -62,14 +62,10 @@ const Contacto = () => {
 
   return (
     <Layout>
-      <Hero img={bgImage}>
-        <span>
-          <h1 dangerouslySetInnerHTML={{ __html: `${hero.ctaText}` }} style={{ color: hero.fontColor }}>
-          </h1>
-        </span>
-        <button>{hero.ctaButton}</button>
-      </Hero>
-
+      {
+        data &&
+        <Hero hero={hero}/>
+      }
       <section className="contacto">
         <div className="container">
           <h2>¡Hagamos esto juntos!</h2>
