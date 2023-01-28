@@ -83,7 +83,7 @@ const Testimonios = () => {
 
     if (prev - 2 < 0) {
       const index = items.length - 2;
-      carouselRef.scrollTo({ left: width * (index + mobileOffset), behavior: 'instant' });
+      carouselRef.scrollTo({ left: width * (index + (mobileOffset * 2)), behavior: 'instant' });
       prev = items.length - 3;
     }
 
