@@ -51,13 +51,14 @@ const AliadosEmprende = () => {
                 alt={aliado.title}
                 width="300px"
                 height="284px"
+                loading="eager"
               />
             ))}
           </Carousel>
         )}
       </div>
 
-      <button className="cta">Solicitar más información</button>
+      <button className="cta">Más información</button>
     </section>
   );
 };

@@ -10,13 +10,43 @@
   .carousel {
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 8rem;
   }
+
+  .InfiniteCarouselArrowIcon {
+    border-color: $controls-color;
+  }
+
+  .InfiniteCarouselDots {
+    @include row(center, center);
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .InfiniteCarouselDot {
+    background-color: $controls-color;
+    padding: 2px;
+    border-radius: 100%;
+    margin: 0;
+  }
+
+  .InfiniteCarouselDotIcon {
+    background-color: $bg-primary;
+    width: 12px;
+    height: 12px;
+  }
+
+  .InfiniteCarouselDotActiveIcon {
+    background-color: $controls-color;
+  }
+
 
   button.cta{
     @include col(center, center);
     @include cta-button(0.5em 2.8em);
     font-size: 2rem;
     margin: 0 auto;
+    margin-bottom: 15rem;
   }
   hr
 
@@ -26,6 +56,25 @@
 
     img {
       border-radius: 100%;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    margin-bottom: 10rem;
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    .carousel {
+      width: 100%;
+      margin-bottom: 10rem;
+    }
+
+    button.cta {
+      font-size: 1.8rem;
+      height: 5.2rem;
+      WIDTH: calc(100% - 8rem);
     }
   }
 }

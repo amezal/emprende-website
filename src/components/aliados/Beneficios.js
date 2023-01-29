@@ -7,8 +7,8 @@ const Beneficios = () => {
       <div className="container">
         <div className="aliados">
         <h2>Aliados Emprende</h2>
-        <p>
-          Convertite en una empresa aliada para juntos potenciar el progreso económico en  la región.
+        <p className="subtitulo">
+          Convertite en una empresa aliada para juntos potenciar el progreso económico en la región.
         </p>
         </div>
         <hr />
@@ -22,7 +22,7 @@ const Beneficios = () => {
               width={150}
             />
             <h4>Posicionamiento</h4>
-            <p>Tu marca comprometida con la sostenibilidad y las personas</p>
+            <p>Compromiso con la sostenibilidad y las personas.</p>
           </div>
           <div className="beneficio">
             <StaticImage
@@ -32,7 +32,7 @@ const Beneficios = () => {
               width={150}
             />
             <h4>Conexión</h4>
-            <p>Con el segmento de mercado emprendedor</p>
+            <p>Con el segmento de mercado emprendedor.</p>
           </div>
           <div className="beneficio">
             <StaticImage
@@ -42,7 +42,7 @@ const Beneficios = () => {
               width={150}
             />
             <h4>Alcance</h4>
-            <p>Por medio de nuestras menciones en medios impresos y digitales</p>
+            <p>Por medio de nuestras menciones en medios impresos y digitales.</p>
           </div>
         </div>
       </div>

@@ -9,15 +9,48 @@
     @include row(center, center);
     gap: 5rem;
   }
-  h2 {
+
+  h2.desktop {
     margin-bottom: 7.5rem;
+  }
+
+  h2.mobile {
+    display: none;
   }
 
   &__list {
     li {
+      color: $fc-gray;
       padding-left: 2rem;
       font-size: 2rem;
       list-style-position: inside;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    margin: 10rem 0;
+    
+    .container {
+      @include col(center, center);
+    }
+
+    h2.desktop {
+      display: none;
+    }
+
+    h2.mobile {
+      display: block;
+    }
+    
+    &__list {
+      padding-left: 0;
+      font-size: 1.8rem;
+      text-align: left;
+      line-height: 25.92px;
+      
+      li {
+        margin-bottom: 2.5rem;
+      }
     }
   }
 }

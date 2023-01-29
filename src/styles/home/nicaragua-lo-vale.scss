@@ -39,7 +39,7 @@
 
       &__slider:hover,
       &__slider:active {
-        background: #C4C4C4;
+        background: $controls-color;
       }
     }
 
@@ -48,14 +48,14 @@
       height: 1.6rem;
       background: transparent;
       border-radius: 100%;
-      border: 2px solid #C4C4C4;
+      border: 2px solid $controls-color;
 
       &--current,
       &:hover {
         width: 1.6rem;
         height: 1.6rem;
-        background: #C4C4C4;
-        border: 2px solid #C4C4C4;
+        background: $controls-color;
+        border: 2px solid $controls-color;
         border-radius: 100%;
       }
     }

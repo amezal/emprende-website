@@ -12,20 +12,13 @@
 
     h2 {
       width: 10ch;
-      margin: none;
+      margin: 0;
     }
-  
-    p {
-      font-size:2rem;
+
+    p.subtitulo {
       width: 29ch;
       text-align: left;
     }
-  }
-
-  p {
-    color: $fc-gray;
-    font-size: 3rem;
-    width: 45ch;
   }
 
   h2 {
@@ -57,5 +50,46 @@
         width: 20ch;
       }
     }
+  }
+
+  @media (max-width: $bp-mobile) {
+    margin-top: 0;
+    text-align: center;
+
+    .aliados {
+      margin: 10rem 0;
+      @include col(center, center);
+      text-align: center;
+
+      .subtitulo {
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    &__list {
+      @include col(center, center);
+  
+      .beneficio {
+  
+        &__img {
+          margin-bottom: 3rem;
+        }
+  
+        h4 {
+          font-weight: 700;
+          font-size: 2.4rem;
+          margin-bottom: 2rem;
+        }
+  
+        p {
+          line-height: 24px;
+          font-size: 2rem;
+          width: 20ch;
+        }
+      }
+    }
+
+    
   }
 }

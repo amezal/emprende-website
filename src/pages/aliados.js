@@ -58,10 +58,11 @@ const Aliados = () => {
         <Hero hero={hero}/>
       }
       <Beneficios />
-      <hr />
+      <hr />a
       <ComoApoyar />
       <hr />
       <AliadosEmprende />
+      <hr />
       <Voluntarios />
 
     </Layout>

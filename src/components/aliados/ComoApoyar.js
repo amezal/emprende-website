@@ -5,6 +5,7 @@ const ComoApoyar = () => {
   return (
     <section className="como-apoyar">
       <div className="container">
+        <h2 className="mobile">Cómo apoyar</h2>
         <StaticImage
                 src='../../images/ComoApoyar.png'
                 quality={100}
@@ -14,7 +15,7 @@ const ComoApoyar = () => {
                 alt="Killari Store - Josselyn Cabrera"
               />
         <div className="como-apoyar__list">
-          <h2>Cómo apoyar</h2>
+          <h2 className="desktop">Cómo apoyar</h2>
           <ol>
             <li>Organizando ferias y eventos.</li>  
             <li>Impartiento webinars o talleres.</li>
