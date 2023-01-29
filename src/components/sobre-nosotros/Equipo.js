@@ -71,6 +71,10 @@ const Equipo = () => {
     <section className="equipo">
       <div className="container">
         <h2>Equipo Emprende</h2>
+        <p className="subtitulo">
+          Profesionales voluntarios en diferentes áreas, trabajando
+          en pro del desarrollo deel ecosistema emprendedor.
+        </p>
         <div className="equipo__carousel" ref={carouselRef}>
           {equipo.map(integrante => (
             <div className="integrante" key={integrante.name}>

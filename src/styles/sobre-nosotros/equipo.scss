@@ -4,6 +4,15 @@
   margin-top: 15rem;
   margin-bottom: 20rem;
 
+  h2 {
+    margin-bottom: 4rem;
+  }
+
+  .subtitulo {
+    width: 43ch;
+    margin-bottom: 10rem;
+  }
+
 
   &__carousel {
     width: 85vw;
@@ -102,4 +111,37 @@
     }
   }
 
+  @media (max-width: $bp-mobile) {
+    margin: 10rem 0;
+
+    .subtitulo {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    &__carousel {
+      .integrante {
+        // height:
+      }
+    }
+
+    &__controls {
+      gap: 1rem;
+      
+      button {
+        div {
+          width: 4rem;
+          height: 1rem;
+        }
+      }
+
+      .active {
+        div {
+          width: 4rem;
+          height: 1.2rem;
+        }
+      }
+    }
+
+  }
 }
