@@ -1,13 +1,8 @@
 import React from 'react';
 import InfiniteCarousel from 'react-leaf-carousel';
 
-const Infinite = ({children}) => {
-  let isMobile = false;
-  if (typeof window !== "undefined") {
-    if (window.innerWidth <= 568) {
-      isMobile = true;
-    }
-  }
+const Infinite = ({isMobile, children}) => {
+
   return (
     <InfiniteCarousel
       breakpoints={[
@@ -36,10 +31,11 @@ const Infinite = ({children}) => {
       ]}
       lazyLoad={false}
       dots={isMobile}
+      arrows={true}
       showSides={false}
       slidesToScroll={2}
       slidesToShow={4}
-      scrollOnDevice={true}
+      scrollOnDevice={false}
       autoCycle={false}
       slidesSpacing={50}
     >

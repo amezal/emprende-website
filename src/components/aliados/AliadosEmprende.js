@@ -35,7 +35,13 @@ const AliadosEmprende = () => {
     image: edge.node.featuredImage.node.localFile.childImageSharp.gatsbyImageData,
   }));
 
-
+  let isMobile = false;
+  if (typeof window !== "undefined") {
+    if (window.innerWidth <= 568) {
+      isMobile = true;
+    }
+  }
+  
   return (
     <section className="aliados-emprende">
       <div className="container">
@@ -43,7 +49,7 @@ const AliadosEmprende = () => {
       </div>
       <div className="carousel">
         {data && (
-          <Carousel>
+          <Carousel isMobile={isMobile}>
             {aliados.map((aliado) => (
               <GatsbyImage
                 image={aliado.image}
