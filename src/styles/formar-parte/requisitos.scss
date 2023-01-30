@@ -3,9 +3,15 @@
 .requisitos {
   margin-top: 20vh;
   margin-bottom: 20rem;
+
+  .mobile {
+    display: none;
+  }
+
   .text {
     margin-left: 8rem;
   }
+
   .container {
     @include row(center, flex-start)
   }
@@ -41,4 +47,59 @@
     @include cta-button(0.75em 3.43em);
     font-size: 2rem;
   }
+
+  @media (max-width: $bp-mobile) {
+    margin: 10rem 0;
+    text-align: center;
+
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+    
+    .text {
+      margin: 0;
+    }
+
+    .container {
+      @include col(center, flex-start);
+    }
+
+    h2 {
+      margin-top: 0;
+      width: 100%;
+    }
+
+    p.subtitulo {
+      width: 100%;
+      text-align: center;
+      line-height: 25.92px;
+    }
+
+    ol {
+      list-style-position: outside;
+      margin-left: 10%;
+    }
+
+    li {
+      text-align: left;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .img {
+      width: 100%;
+      height: unset;
+    }
+    
+    .llenar-formulario {
+      width: 90%;
+      height: 5.2rem;
+      font-size: 1.8rem;
+    }
+  }
+
 }

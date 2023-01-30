@@ -31,7 +31,7 @@ const Infinite = ({isMobile, children}) => {
       ]}
       lazyLoad={false}
       dots={isMobile}
-      arrows={true}
+      arrows={!isMobile}
       showSides={false}
       slidesToScroll={2}
       slidesToShow={4}

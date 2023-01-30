@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Requisitos from '../components/formar-parte/Requisitos';
 import Beneficios from '../components/formar-parte/Beneficios';
 import '../styles/style.scss';
+import SEO from '../components/SEO';
 
 const FormarParte = () => {
 
@@ -51,13 +52,14 @@ const FormarParte = () => {
 
   return (
     <Layout>
+      <SEO title="Formar Parte - Emprende" description="AAA"/>
       {
         data &&
         <Hero hero={hero}/>
       }
-      <Requisitos />
+      <Requisitos />a
       <hr />
-      <Beneficios />
+      {/* <Beneficios /> */}
     </Layout>
   )
 }
