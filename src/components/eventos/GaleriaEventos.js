@@ -39,13 +39,16 @@ function GaleriaEventos() {
         </p>
         <div className="galeria">
           <div className="main">
-            <GatsbyImage
-              className="main__image"
-              image={images[selectedImage].src}
-              title={images[selectedImage].alt}
-              alt={images[selectedImage].alt}
-              loading="eager"
-            />
+            {
+              data &&
+              <GatsbyImage
+                className="main__image"
+                image={images[selectedImage].src}
+                title={images[selectedImage].alt}
+                alt={images[selectedImage].alt}
+                loading="eager"
+              />
+            }
           </div>
           <div className="scroll">
             {
