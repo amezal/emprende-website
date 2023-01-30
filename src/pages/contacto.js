@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useStaticQuery, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { getImage, StaticImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import { FaInstagram, FaYoutube, FaTiktok, FaFacebookSquare } from 'react-icons/fa';
 import Layout from '../components/Layout';
@@ -123,10 +123,42 @@ const Contacto = () => {
           <h3 className="email">emprende.programa@gmail.com</h3>
 
           <div className="socials">
-            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/emprende.ca/"><FaInstagram size="60px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca"><FaFacebookSquare size="60px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.tiktok.com/@emprende.ca"><FaTiktok size="60px" /> </a>
-            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw"><FaYoutube size="60px" /> </a>
+          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca">
+                <StaticImage
+                  className="img"
+                  src="../images/facebook-round-blue.svg"
+                  height="60"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.tiktok.com/@emprende.ca">
+                <StaticImage
+                  className="img"
+                  src="../images/tiktok-round-blue.svg"
+                  height="60"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCa7zHM8AdmiUGJhMK7f2TLw">
+                <StaticImage
+                  className="img"
+                  src="../images/youtube-round-blue.svg"
+                  height="60"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/emprende.ca/">
+                <StaticImage
+                  className="img"
+                  src="../images/instagram-round-blue.svg"
+                  height="60"
+                  loading="eager"
+                  placeholder="none"
+                />
+              </a>
           </div>
 
         </div>

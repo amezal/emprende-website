@@ -74,4 +74,52 @@
     @include row(center, center);
     gap: 4rem;
   }
+
+  @media (max-width: $bp-mobile) {
+    margin: 10rem 0;
+    text-align: center;
+
+    .container {
+      padding: 0 2.5rem;
+    }
+
+    h2 {
+      margin-bottom: 4rem;
+    }
+
+    form {
+      width: 100%;
+      padding: 3rem;
+
+      h4 {
+        font-size: 1.8rem;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: 1rem;
+        padding: 1.2em 1.6em;
+      }
+
+      button {
+        font-size: 1.8rem;
+        padding: 0.4em 0;
+        width: 100%;
+      }
+    }
+    
+    .email {
+      font-size: 1.8rem;
+    }
+
+    .socials {
+      gap: 2rem;
+    }
+
+    .img {
+      height: 30px;
+      width: 30px;
+    }
+  }
 }
