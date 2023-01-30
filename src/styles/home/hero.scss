@@ -113,11 +113,12 @@
 
     .controls {
       @include row(center, center);
-      position: absolute;
-      bottom: 11rem;
-      right: 45%;
+      position: relative;
+      bottom: 4rem;
+      right: unset;
       top: unset;
       gap: 1.6rem;
+      width: 100%;
     }
 
     &__carousel {
