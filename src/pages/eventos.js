@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useStaticQuery, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import ProximosEventos from '../components/eventos/ProximosEventos';
@@ -59,7 +56,8 @@ const Eventos = () => {
       {
         data &&
         <Hero hero={hero}/>
-      }      <Calendario />
+      }
+      <Calendario />
       <hr />
       <GaleriaEventos />
     </Layout>

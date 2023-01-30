@@ -51,8 +51,45 @@
 
       .selected {
         filter: none;
-        border: 1px solid $bg-secondary;
       }
     }
+  }
+
+  @media (max-width: $bp-mobile) {
+    margin: 10rem 0;
+
+    .subtitulo {
+      margin-top: 4rem;
+      line-height: 29.32px;
+      width: 100%;
+    }
+
+    .galeria {
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 4rem;
+      margin-bottom: 10rem;
+
+      .main {
+        &__image {
+          height: auto;
+          width: 100%;
+          aspect-ratio: 1/1;
+        }
+      }
+
+      .scroll {
+        gap: 0.8rem;
+        height: auto;
+        @include row(center, center);
+
+        &__image {
+          width: 5rem;
+          min-height: 5rem;
+          max-height: 5rem;
+        }
+      }
+    }
+
   }
 }

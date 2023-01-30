@@ -8,11 +8,19 @@
   padding: 5rem 5rem;
   font-size: 2rem;
   color: black;
+  font-weight: 400;
 
   .event-days {
     background-color: $btn-bg;
     color: white;
     border-radius: 16px;
+  }
+
+  @media (max-width: $bp-mobile) {
+    width: 100%;
+    padding: 4rem 3rem;
+    font-size: 1rem;
+    padding-top: 1rem;
   }
 }
 
@@ -170,4 +178,10 @@
 
 .react-calendar--selectRange .react-calendar__tile--hover {
   // background-color: #e6e6e6;
+}
+
+.react-calendar__navigation__next-button,
+.react-calendar__navigation__prev-button {
+  font-size: 2.5em;
+  padding-bottom: 0.125em;
 }

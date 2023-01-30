@@ -30,10 +30,6 @@ function GaleriaEventos() {
     alt: node.altText || 'Evento'
   }))
 
-  const changeSelectedImage = (e) => {
-    // TODO
-  }
-
   return (
     <section className="galeria-eventos">
       <div className="container">
