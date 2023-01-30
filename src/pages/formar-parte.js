@@ -57,9 +57,9 @@ const FormarParte = () => {
         data &&
         <Hero hero={hero}/>
       }
-      <Requisitos />a
+      <Requisitos />
       <hr />
-      {/* <Beneficios /> */}
+      <Beneficios />
     </Layout>
   )
 }
