@@ -7,7 +7,7 @@ function GaleriaEventos() {
   const [selectedImage, setSelectedImage] = useState(0)
 
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       allWpMediaItem(
         filter: {title: {regex: "/galeria-eventos/"}}
         sort: {fields: title, order: ASC}
