@@ -53,21 +53,25 @@ const Contacto = () => {
 
   const callApi = async (e) => {
     e.preventDefault();
-    const url = "https://script.google.com/macros/s/AKfycbxcY20lhrHrvPbhmRXqaGqz6PzfOjFoF7yLNKaO4-saa7S3MchWHzMqXDV1bM6n002-jg/exec"
+
+    const url = "https://formsubmit.co/ajax/3a75b838f2269fcbcfd73f14dbb18d7f"
 
     const params = e.target;
 
     const body = {
-      nombre: params[0].value,
-      apellido: params[1].value,
-      email: params[2].value,
-      filtro: params[3].value,
-      mensaje: params[4].value,
+      'Nombre': `${params[0].value} ${params[0].value}`,
+      'Email': params[2].value,
+      '¿Cómo querés unirte?': params[3].value,
+      '¿De qué manera te gustaría colaborar?': params[4].value,
+      'Mensaje': params[5].value,
     }
 
-    const queryString = Object.keys(body).map((query) => (`${query}=${body[query]}&`)).join('');
+    await axios.post(url, body, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
 
-    const res = await axios.get(`${url}?${queryString}`)
   }
 
   return (
@@ -88,12 +92,12 @@ const Contacto = () => {
             </div>
             <input type="text" placeholder="Correo" name="email" />
             <select name="select1">
-              <option disabled selected>¿Cómo querés unirte?</option>
+              <option value="" disabled selected>¿Cómo querés unirte?</option>
               <option value="Empresa aliada">Empresa aliada</option>
               <option value="Voluntario">Voluntario</option>
             </select>
             <select name="select2">
-              <option disabled selected>¿De qué manera te gustaría colaborar?</option>
+              <option value="" disabled selected>¿De qué manera te gustaría colaborar?</option>
               <option value="Organizando ferias y eventos">
                 Organizando ferias y eventos
               </option>
