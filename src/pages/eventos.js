@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import Hero from '../components/SEO';
 import ProximosEventos from '../components/eventos/ProximosEventos';
 import Calendario from '../components/eventos/Calendario';
 import '../styles/style.scss';

@@ -52,7 +52,7 @@ const FormarParte = () => {
   const image = hero.image.localFile.childImageSharp.gatsbyImageData.images.fallback.src
   return (
     <Layout>
-      <SEO 
+      <SEO
         title="Formar Parte" 
         description={hero.ctaText}
         image={image}
