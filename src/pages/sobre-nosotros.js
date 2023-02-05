@@ -17,6 +17,7 @@ const SobreNosotros = () => {
         ctaText
         fontColor
         page
+        redirect
         image{
           altText
           localFile {

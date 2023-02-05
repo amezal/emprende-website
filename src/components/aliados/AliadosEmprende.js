@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import loadable from "@loadable/component";
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, navigate, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 
@@ -64,7 +64,12 @@ const AliadosEmprende = () => {
         )}
       </div>
 
-      <button className="cta">Más información</button>
+      <button 
+        className="cta"
+        onClick={() => navigate('/contacto')}
+      >
+        Más información
+      </button>
     </section>
   );
 };

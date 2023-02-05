@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BackgroundImage from "gatsby-background-image";
 import { getImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
+import { navigate } from "gatsby";
 
 const Hero = ({ hero }) => {
   const [loaded, setLoaded] = useState(false);
@@ -42,7 +43,11 @@ const Hero = ({ hero }) => {
             style={{ color: hero.fontColor }}
           ></h1>
         </span>
-        <button>{hero.ctaButton}</button>
+        <button
+          onClick={() => navigate(hero.redirect)}
+        >
+          {hero.ctaButton}
+        </button>
       </div>
     </BackgroundImage>
   );

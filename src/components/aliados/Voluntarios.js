@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, navigate, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useEffect, useRef, useState } from "react";
 import PlatformImage from "./PlatformImage.js";
@@ -110,7 +110,12 @@ const Voluntarios = () => {
             </button>
           ))}
         </div>
-        <button className="aplicar-ahora">Aplicar ahora</button>
+        <button 
+          className="aplicar-ahora"
+          onClick={() => navigate('/contacto')}
+        >
+          Aplicar ahora
+        </button>
       </div>
     </section>
   );

@@ -19,6 +19,7 @@ const Aliados = () => {
         ctaText
         fontColor
         page
+        redirect
         image{
           altText
           localFile {

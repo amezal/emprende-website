@@ -19,6 +19,7 @@ const Contacto = () => {
         ctaText
         fontColor
         page
+        redirect
         image{
           altText
           localFile {

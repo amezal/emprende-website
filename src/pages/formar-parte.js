@@ -17,6 +17,7 @@ const FormarParte = () => {
         ctaText
         fontColor
         page
+        redirect
         image{
           altText
           localFile {

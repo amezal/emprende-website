@@ -25,6 +25,7 @@ const HomePage = () => {
               ctaText
               fontColor
               page
+              redirect
               image {
                 altText
                 localFile {

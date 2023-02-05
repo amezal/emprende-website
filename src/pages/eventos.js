@@ -19,6 +19,7 @@ const Eventos = () => {
         ctaText
         fontColor
         page
+        redirect
         image{
           altText
           localFile {

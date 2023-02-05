@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
+import { navigate } from 'gatsby';
 
 const Carousel = ({ data }) => {
   const [heros, setHeros] = useState(data.map(hero => {
@@ -21,7 +22,8 @@ const Carousel = ({ data }) => {
       cta: hero.ctaButton,
       fc: hero.fontColor,
       sources: sources,
-      alt: hero.image.altText
+      alt: hero.image.altText,
+      redirect: hero.redirect
     }
   }))
 
@@ -71,7 +73,7 @@ const Carousel = ({ data }) => {
     carouselRef.scrollTo({ left: child.width * (i + 1), behavior: 'smooth' });
     setCurrent(i + 1);
   }
-
+  console.log(heros)
   return (
     <section className="hero">
       <div className={`hero__carousel ${carouselRef && `hero__carousel__smooth`}`} ref={myRef}>
@@ -94,7 +96,11 @@ const Carousel = ({ data }) => {
                 <h1 dangerouslySetInnerHTML={{ __html: `${hero.h1}` }} style={{ color: hero.fc }}></h1>
               </span>
               <span className="cta-container">
-                <button>{hero.cta}</button>
+                <button 
+                  onClick={() => navigate(hero.redirect)}
+                >
+                  {hero.cta}
+                  </button>
               </span>
             </div>
           </BackgroundImage>

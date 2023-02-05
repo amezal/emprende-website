@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => {
@@ -20,7 +20,11 @@ const Footer = () => {
           <h3>
             ¿Querés promover el <br /> progreso económico <br /> de la región?
           </h3>
-          <button>Apoyar</button>
+          <button
+            onClick={() => navigate('/aliados')}
+          >
+            Apoyar
+          </button>
         </div>
 
         <div className="footer__right">
