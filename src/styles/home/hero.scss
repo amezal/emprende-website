@@ -1,7 +1,7 @@
 @use '../variables' as *;
 
 .hero {
-  margin-top: 132px;
+  padding-top: 132px;
 
   .controls {
     @include col(center, center);

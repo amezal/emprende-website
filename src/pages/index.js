@@ -72,7 +72,7 @@ const HomePage = () => {
       <Carousel data={heros}/>
       <NuestroProposito />
       <hr />
-      <NuestroImpacto />
+      <NuestroImpacto />a
       <hr />
       <NicaraguaLoVale />
       <hr />
