@@ -49,10 +49,14 @@ const FormarParte = () => {
   }
   `)
   const hero = data.wpHero.hero;
-
+  const image = hero.image.localFile.childImageSharp.gatsbyImageData.images.fallback.src
   return (
     <Layout>
-      <SEO title="Formar Parte - Emprende" description="AAA"/>
+      <SEO 
+        title="Formar Parte" 
+        description="Formá parte de nuestra comunidad de emprendedores"
+        image={image}
+      />
       {
         data &&
         <Hero hero={hero}/>

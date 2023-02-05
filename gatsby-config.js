@@ -2,8 +2,9 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: `Proyecto Emprende`,
-    siteUrl: `https://www.wp.emprendeca.com`
+    title: `Programa Emprende`,
+    description: 'Promoviendo el talento local',
+    siteUrl: `https://emprendeca.com`
   },
   plugins: [
     {

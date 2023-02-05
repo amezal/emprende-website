@@ -10,11 +10,16 @@ import NuestroProposito from '../components/home/NuestroProposito';
 import NuestroImpacto from '../components/home/NuestroImpacto';
 import Testimonios from '../components/home/Testimonios';
 import NicaraguaLoVale from "../components/home/NicaraguaLoVale";
+import SEO from "../components/SEO";
 
 
 const HomePage = () => {
   return (
     <Layout>
+      <SEO 
+        title="Inicio" 
+        description="Promoviendo el talento local" 
+      />
       <Hero />
       <NuestroProposito />
       <hr />
@@ -24,7 +29,7 @@ const HomePage = () => {
       <hr />
       <Testimonios />
     </Layout>
-  )
+  );
 }
 
 export default HomePage;
