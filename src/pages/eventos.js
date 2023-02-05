@@ -56,7 +56,7 @@ const Eventos = () => {
   return (
     <Layout>
       <SEO
-        title="Eventos"
+        title="Eventos" 
         description={hero.ctaText}
         image={image}
       />

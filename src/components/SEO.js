@@ -7,6 +7,7 @@ const SEO = ({ title, description, image }) => {
   'Emprendimiento']
   const url = 'https://emprendeca.com'
   image = `${url}${image}`
+  description = description.replace(/<br\s*\/>/g, '');
   return (
     <Helmet 
       title={`${title} | Programa Emprende`} 
