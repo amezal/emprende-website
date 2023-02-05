@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import NuestrosObjetivos from '../components/sobre-nosotros/NuestrosObjetivos';
 import Equipo from '../components/sobre-nosotros/Equipo';
 import '../styles/style.scss';
+import SEO from '../components/SEO';
 
 const SobreNosotros = () => {
 
@@ -48,9 +49,15 @@ const SobreNosotros = () => {
   }
   `);
   const hero = data.wpHero.hero;
+  const image = hero.image.localFile.childImageSharp.gatsbyImageData.images.fallback.src
   
   return (
     <Layout>
+      <SEO
+        title="Sobre Nosotros"
+        description={hero.ctaText}
+        image={image}
+      />
       {
         data &&
         <Hero hero={hero}/>

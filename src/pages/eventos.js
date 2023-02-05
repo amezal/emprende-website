@@ -50,9 +50,15 @@ const Eventos = () => {
   }
   `)
   const hero = data.wpHero.hero;
+  const image = hero.image.localFile.childImageSharp.gatsbyImageData.images.fallback.src
 
   return (
     <Layout>
+      <SEO
+        title="Eventos"
+        description={hero.ctaText}
+        image={image}
+      />
       {
         data &&
         <Hero hero={hero}/>

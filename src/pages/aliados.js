@@ -7,6 +7,7 @@ import ComoApoyar from '../components/aliados/ComoApoyar';
 import AliadosEmprende from '../components/aliados/AliadosEmprende';
 import Voluntarios from '../components/aliados/Voluntarios';
 import '../styles/style.scss';
+import SEO from '../components/SEO';
 
 const Aliados = () => {
 
@@ -50,9 +51,15 @@ const Aliados = () => {
   }
   `)
   const hero = data.wpHero.hero;
+  const image = hero.image.localFile.childImageSharp.gatsbyImageData.images.fallback.src
 
   return (
     <Layout>
+      <SEO
+        title="Aliados"
+        description={hero.ctaText}
+        image={image}
+      />
       {
         data &&
         <Hero hero={hero}/>

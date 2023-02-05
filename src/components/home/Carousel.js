@@ -73,7 +73,7 @@ const Carousel = ({ data }) => {
   }
 
   return (
-    <>
+    <section className="hero">
       <div className={`hero__carousel ${carouselRef && `hero__carousel__smooth`}`} ref={myRef}>
         {heros.map((hero, i) => (
           <BackgroundImage
@@ -110,7 +110,7 @@ const Carousel = ({ data }) => {
           </button>
         ))}
       </div>
-    </>
+    </section>
   )
 }
 

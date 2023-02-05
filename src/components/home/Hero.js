@@ -49,7 +49,7 @@ const Hero = () => {
   const heros = data.allWpHero.nodes.map(node => node.hero);
   return (
     <section className="hero">
-      <Carousel data={heros} />
+      {/* <Carousel data={heros} /> */}
     </section>
   )
 

@@ -54,7 +54,7 @@ const FormarParte = () => {
     <Layout>
       <SEO 
         title="Formar Parte" 
-        description="Formá parte de nuestra comunidad de emprendedores"
+        description={hero.ctaText}
         image={image}
       />
       {

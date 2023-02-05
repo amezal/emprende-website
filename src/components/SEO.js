@@ -5,6 +5,8 @@ const SEO = ({ title, description, image }) => {
   const keywords = ['Emprende', 'Emprendimientos', 'Programa Emprende',
   'Programa Emprende', 'Programa Emprende Nicaragua', 'Emprendimientos Nicaragua',
   'Emprendimiento']
+  const url = 'https://emprendeca.com'
+  image = `${url}${image}`
   return (
     <Helmet 
       title={`${title} | Programa Emprende`} 

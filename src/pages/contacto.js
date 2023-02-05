@@ -7,6 +7,7 @@ import { FaInstagram, FaYoutube, FaTiktok, FaFacebookSquare } from 'react-icons/
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import '../styles/style.scss';
+import SEO from '../components/SEO';
 
 const Contacto = () => {
 
@@ -50,6 +51,7 @@ const Contacto = () => {
   }
   `)
   const hero = data.wpHero.hero;
+  const image = hero.image.localFile.childImageSharp.gatsbyImageData.images.fallback.src
 
   const callApi = async (e) => {
     e.preventDefault();
@@ -76,6 +78,11 @@ const Contacto = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contacto"
+        description={hero.ctaText}
+        image={image}
+      />
       {
         data &&
         <Hero hero={hero}/>
