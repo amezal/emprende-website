@@ -26,6 +26,7 @@ const SEO = ({ title, description, image }) => {
         { name: `twitter:title`, content: title },
         { name: `twitter:description`, content: description },
         { name: `twitter:image`, content: image },
+        { name: `google-site-verification`, content: 'P2vb_hz6LOuNP8EOO9h0hL1Y3_8CRmdTcRyiPClnD1E' },
       ]}
     />
   )

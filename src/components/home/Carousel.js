@@ -33,8 +33,8 @@ const Carousel = ({ data }) => {
 
   //autoplay
   useEffect(() => {
-    const id = setInterval(nextSlide, 7000);
-    return () => clearInterval(id);
+    // const id = setInterval(nextSlide, 7000);
+    // return () => clearInterval(id);
   })
 
   useEffect(() => {
@@ -90,12 +90,12 @@ const Carousel = ({ data }) => {
           >
             <div 
               className={`container hero__carousel__content ${`hero__carousel__content${current === i ? '--current' : ''}`}`}
-              title=""
+              title={hero.alt}
             >
-              <span>
+              <span title="">
                 <h1 dangerouslySetInnerHTML={{ __html: `${hero.h1}` }} style={{ color: hero.fc }}></h1>
               </span>
-              <span className="cta-container">
+              <span className="cta-container" title="">
                 <button 
                   onClick={() => navigate(hero.redirect)}
                 >
