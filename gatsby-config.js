@@ -1,12 +1,21 @@
 require('dotenv').config();
+const siteUrl = 'https://emprendeca.com'
 
 module.exports = {
   siteMetadata: {
     title: `Programa Emprende`,
     description: 'Promoviendo el talento local',
-    siteUrl: `https://emprendeca.com`
+    siteUrl: siteUrl
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: 'https://emprendeca.com/sitemap-index.html',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    },
     {
       resolve: 'gatsby-source-wordpress',
       options: {
