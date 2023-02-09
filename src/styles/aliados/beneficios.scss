@@ -48,6 +48,7 @@
         line-height: 24px;
         font-size: 2rem;
         width: 20ch;
+        color: $fc-gray;
       }
     }
   }
@@ -62,7 +63,7 @@
       text-align: center;
 
       .subtitulo {
-        text-align: center;
+        text-align: center !important;
         width: 100%;
       }
     }

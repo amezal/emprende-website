@@ -89,7 +89,7 @@ const Navbar = () => {
               <Link to="/formar-parte">Forma parte</Link>
               <Link to="/eventos">Eventos</Link>
             </div>
-            <button className="contactanos">Contactanos</button>
+            <button className="contactanos" onClick={()=>navigate('/contacto')}>Contactanos</button>
             <div className="socials">
               <a target="_blank" rel="noreferrer" href="https://www.facebook.com/emprender.ca">
                 <StaticImage

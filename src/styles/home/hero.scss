@@ -1,8 +1,6 @@
 @use '../variables' as *;
 
 .hero {
-  padding-top: 132px;
-
   .controls {
     @include col(center, center);
     position: absolute;
@@ -52,6 +50,7 @@
       padding-top: 10%;
       justify-content: flex-start;
       align-items: flex-start;
+      max-width: unset;
     }
 
     &__smooth {

@@ -36,8 +36,9 @@ const Infinite = ({isMobile, children}) => {
       slidesToScroll={2}
       slidesToShow={4}
       scrollOnDevice={false}
-      autoCycle={false}
+      autoCycle={true}
       slidesSpacing={50}
+      cycleInterval={2500}
     >
       {children}
     </InfiniteCarousel>

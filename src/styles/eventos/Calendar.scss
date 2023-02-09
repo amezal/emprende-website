@@ -148,8 +148,9 @@
 .react-calendar__tile--now {
   // background: #95c6ff;
   color: black;
-  border: 2px solid $btn-bg !important;
-  border-radius: 100%;
+  background: #DEDEDE;
+  // border: 2px solid #DEDEDE !important;
+  // border-radius: 100%;
 }
 
 .react-calendar__tile--now:enabled:hover,

@@ -19,6 +19,9 @@ a {
   color: unset;
 }
 
+main {
+  padding-top: 132px;
+}
 
 .container {
   @include col(flex-start, center);
@@ -58,6 +61,10 @@ p,
 a {
   font-size: 2rem;
   text-align: center;
+}
+
+p.subtitulo {
+  color: $fc-gray;
 }
 
 hr {

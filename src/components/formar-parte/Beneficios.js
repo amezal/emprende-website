@@ -38,7 +38,7 @@ const Beneficios = () => {
               className="img"
             />
             <p>
-              Ganara exposicón gracias a las menciones de aliados e influencers.
+              Ganar exposición gracias a las menciones de aliados e influencers.
             </p>
           </div>
           <div className="item">
