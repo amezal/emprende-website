@@ -95,10 +95,16 @@
       @include col(center, center);
       color: $fc-secondary;
       margin-top: 8rem;
-      gap: 3rem;
+      gap: 1rem;
       a {
         line-height: 36px;
         font-size: 3rem;
+        padding: 1.5rem 4rem;
+        width: auto;
+        border-radius: 30px;
+      }
+      a[aria-current="page"] {
+        border: 1px solid $fc-secondary;
       }
     }
 
