@@ -48,6 +48,10 @@
         bottom: -70px;
         width: 135px;
         height: 135px;
+
+        img {
+          border-radius: 100%;
+        }
       }
 
       &__text {

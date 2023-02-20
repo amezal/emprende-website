@@ -47,6 +47,10 @@
         margin-bottom: 3rem;
         position: relative;
         bottom: -80px;
+
+        img {
+          border-radius: 100%;
+        }
       }
 
       &__text {

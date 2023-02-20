@@ -21,6 +21,10 @@
         width: 750px;
         height: 580px;
         border-radius: 10px;
+
+        img {
+          border-radius: 10px;
+        }
       }
     }
 
@@ -47,6 +51,10 @@
         border-radius: 10px;
         filter: brightness(0.5);
         cursor: pointer;
+        
+        img {
+          border-radius: 10px;
+        }
       }
 
       .selected {
