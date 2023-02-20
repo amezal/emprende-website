@@ -43,7 +43,6 @@
     overflow-x: hidden;
     position: relative;
     @include row(stretch, center);
-    scroll-snap-type: x mandatory;
 
     .container {
       padding-left: 16.5rem;
@@ -69,13 +68,13 @@
         margin-bottom: 5vh;
         transform: translateY(-3rem);
         opacity: 0;
-        transition: all 1.2s ease-in;
+        transition: all 1.4s ease-in;
       }
 
       .cta-container {
         transform: translateY(-4rem);
         opacity: 0;
-        transition: all 1.4s ease-in;
+        transition: all 1.8s ease-in;
       }
 
       button {
@@ -85,13 +84,13 @@
 
       &--current {
         h1 {
-          transition: all 1.2s ease-in-out;
+          transition: all 1.4s ease-in-out;
           transform: translateY(0);
           opacity: 1;
         }
 
         .cta-container {
-          transition: all 1.4s ease-in-out;
+          transition: all 1.8s ease-in-out;
           transform: translateY(0);
           opacity: 1;
         }

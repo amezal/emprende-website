@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import smoothScroll from '../../utils/smoothScroll';
 
 const Testimonios = () => {
 
@@ -40,11 +41,12 @@ const Testimonios = () => {
   const [current, setCurrent] = useState(Math.round(testimonials.length / 2));
   const [carouselRef, setCarouselRef] = useState(null);
   const [items, setItems] = useState(testimonials);
-  let mobileOffset = 0;
+  const [gap, setGap] = useState(0);
+  let mobileOffset = false;
 
   if (typeof window !== "undefined") {
     if (window.innerWidth <= 568) {
-      mobileOffset = 1;
+      mobileOffset = true;
     }
   }
 
@@ -52,15 +54,26 @@ const Testimonios = () => {
     if (myRef.current) {
       setCarouselRef(myRef.current);
       const width = myRef.current.firstChild.getBoundingClientRect().width;
+      const currentGap = myRef.current.children[1].getBoundingClientRect().left - myRef.current.children[0].getBoundingClientRect().left - width;
+      setGap(currentGap);
       const arr = [...items]
       const first = arr[0];
       const second = arr[1];
       const last = arr[arr.length - 1];
       const stl = arr[arr.length - 2];
       setItems([stl, last, ...arr, first, second]);
-      myRef.current.scrollTo({ left: width * (mobileOffset + 1), behavior: 'instant' });
+      console.log(currentGap, width, mobileOffset);
+      // myRef.current.children[2].scrollIntoView({block: "nearest", inline: "nearest"})
+      // debugger;
+      const pos = myRef.current.children[2].offsetLeft - (window.innerWidth - width) / 2
+      myRef.current.scrollTo({left: pos, behavior: 'instant'})
+      // if(!mobileOffset) {
+      //   myRef.current.scrollTo({ left: width + currentGap, behavior: 'instant' });
+      // } else {
+      //   myRef.current.scrollTo({ left: width * 3 - (currentGap - 5), behavior: 'instant' });
+      // }
     }
-  }, [myRef])
+  }, [myRef, window.innerWidth])
 
 
   const nextSlide = () => {
@@ -68,15 +81,15 @@ const Testimonios = () => {
     const width = carouselRef.firstChild.getBoundingClientRect().width;
 
     if (next + 1 > items.length - 1) {
-      const index = 1;
-      carouselRef.scrollTo({ 
-        left: width * (index + mobileOffset), 
-        behavior: 'instant' });
+      const index = 2;
+      const pos = carouselRef.children[index].offsetLeft - (window.innerWidth - width) / 2;
+      carouselRef.scrollTo({left: pos, behavior: 'instant'});
       next = 3;
     }
 
-    const pos = carouselRef.scrollLeft + width;
-    carouselRef.scrollTo({ left: pos, behavior: 'smooth' })
+    const to = carouselRef.scrollLeft + width + gap;
+    const duration = 100;
+    smoothScroll(carouselRef, to, duration);
     setCurrent(next);
   }
 
@@ -86,12 +99,14 @@ const Testimonios = () => {
 
     if (prev - 2 < 0) {
       const index = items.length - 2;
-      carouselRef.scrollTo({ left: width * (index + (mobileOffset * 2)), behavior: 'instant' });
+      const pos = carouselRef.children[index].offsetLeft - (window.innerWidth - width) / 2;
+      carouselRef.scrollTo({left: pos, behavior: 'instant'});
       prev = items.length - 3;
     }
-
-    const pos = carouselRef.scrollLeft - width;
-    carouselRef.scrollTo({ left: pos, behavior: 'smooth' });
+    console.log(gap);
+    const to = carouselRef.scrollLeft - width - gap;
+    const duration = 100;
+    smoothScroll(carouselRef, to, duration);
     setCurrent(prev);
   }
 

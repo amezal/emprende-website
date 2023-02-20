@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import smoothScroll from '../../utils/smoothScroll';
 
 const Equipo = () => {
 
@@ -63,7 +64,9 @@ const Equipo = () => {
   const goToSlide = (i) => {
     setActive(i);
     const width = carouselRef.current.children[0].getBoundingClientRect().width;
-    carouselRef.current.scrollTo({ left: width * i, behavior: 'smooth' })
+    const to = width * i;
+    const duration = 100; 
+    smoothScroll(carouselRef.current, to, duration);
   }
 
 

@@ -3,6 +3,7 @@ import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
 import { navigate } from 'gatsby';
+import smoothScroll from '../../utils/smoothScroll';
 
 const Carousel = ({ data }) => {
   const [heros, setHeros] = useState(data.map(hero => {
@@ -68,9 +69,12 @@ const Carousel = ({ data }) => {
   }
 
   const goToSlide = (i) => {
-    const child = carouselRef.children[0].getBoundingClientRect();
+    const width = carouselRef.children[0].getBoundingClientRect().width;
     /* Since an item was shifted into the start of the array, we skip 1 index */
-    carouselRef.scrollTo({ left: child.width * (i + 1), behavior: 'smooth' });
+    // carouselRef.scrollTo({ left: child.width * (i + 1), behavior: 'smooth' });
+    const to = width * (i + 1);
+    const duration = 100; 
+    smoothScroll(carouselRef, to, duration);
     setCurrent(i + 1);
   }
   console.log(heros)

@@ -2,6 +2,7 @@ import { graphql, navigate, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useEffect, useRef, useState } from "react";
 import PlatformImage from "./PlatformImage.js";
+import smoothScroll from "../../utils/smoothScroll.js";
 
 const Voluntarios = () => {
   const data = useStaticQuery(graphql`
@@ -58,7 +59,9 @@ const Voluntarios = () => {
   const goToSlide = (i) => {
     setActive(i);
     const width = carouselRef.current.children[0].getBoundingClientRect().width;
-    carouselRef.current.scrollTo({ left: width * i, behavior: "smooth" });
+    const to = width * i;
+    const duration = 100; 
+    smoothScroll(carouselRef.current, to, duration);
   };
 
   return (

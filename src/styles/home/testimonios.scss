@@ -21,11 +21,10 @@
   
   &__carousel {
     @include row(stretch, center);
-    overflow-x: hidden;
+    overflow-x: scroll;
     padding-top: 80px;
     padding-bottom: 10px;
     mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0.1) 100%);
-    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     gap: 12rem;
 
