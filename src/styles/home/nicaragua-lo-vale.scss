@@ -79,7 +79,7 @@
     .images {
       justify-content: flex-start;
       width: 100%;
-      overflow-x: hidden;
+      overflow-x: scroll;
       scroll-snap-type: x mandatory;
 
       .image {

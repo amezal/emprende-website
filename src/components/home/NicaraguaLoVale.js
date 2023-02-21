@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useRef } from "react";
@@ -45,8 +45,15 @@ const NicaraguaLoVale = () => {
   const goToSlide = (i) => {
     const child = carouselRef.current.children[0].getBoundingClientRect();
     carouselRef.current.scrollTo({ left: child.width * i, behavior: "smooth" });
-    setCurrent(i);
   };
+
+  const handleScroll = (e) => {
+    const {width} = carouselRef.current.children[0].getBoundingClientRect();
+    const index = Math.floor(carouselRef.current.scrollLeft / width);
+    if (index != current) {
+      setCurrent(index);
+    }
+  }
 
   return (
     <section className="nicaragua-lo-vale">
@@ -58,7 +65,7 @@ const NicaraguaLoVale = () => {
           Conocé el valor que tienen los productos locales
           a través de nuestra última campaña.
         </p>
-        <div className="images" ref={carouselRef}>
+        <div className="images" ref={carouselRef} onScroll={handleScroll}>
           {images.map((image, i) => (
             <a href={links[i]} key={i} target="_blank">
               <GatsbyImage
