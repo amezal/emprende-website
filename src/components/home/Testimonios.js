@@ -88,7 +88,7 @@ const Testimonios = () => {
     }
 
     const to = carouselRef.scrollLeft + width + gap;
-    const duration = 100;
+    const duration = 200;
     smoothScroll(carouselRef, to, duration);
     setCurrent(next);
   }

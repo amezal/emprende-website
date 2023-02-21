@@ -60,7 +60,7 @@ const Voluntarios = () => {
     setActive(i);
     const width = carouselRef.current.children[0].getBoundingClientRect().width;
     const to = width * i;
-    const duration = 100; 
+    const duration = 600; 
     smoothScroll(carouselRef.current, to, duration);
   };
 
