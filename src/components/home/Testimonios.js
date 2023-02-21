@@ -73,7 +73,7 @@ const Testimonios = () => {
       //   myRef.current.scrollTo({ left: width * 3 - (currentGap - 5), behavior: 'instant' });
       // }
     }
-  }, [myRef, window.innerWidth])
+  }, [myRef])
 
 
   const nextSlide = () => {
