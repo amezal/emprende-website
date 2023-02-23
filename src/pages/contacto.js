@@ -92,7 +92,7 @@ const Contacto = () => {
         <div className="container">
           <h2>¡Hagamos esto juntos!</h2>
           <p className="subtitulo">Contanos cómo querés apoyar.</p>
-          <form onSubmit={callApi}>
+          <form action={url}>
             <h4><b>Envianos un mensaje</b></h4>
             <div className="separator">
               <input type="text" placeholder="Nombre" name="nombre" />
