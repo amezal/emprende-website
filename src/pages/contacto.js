@@ -69,11 +69,16 @@ const Contacto = () => {
       'Mensaje': params[5].value,
     }
 
-    await axios.post(url, body, {
+    const res = await axios.post(url, body, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
+
+    if(res.data.success == 'true') {
+      alert('Mensaje enviado');
+      e.target.reset();
+    }
 
   }
 
