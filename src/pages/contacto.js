@@ -57,7 +57,7 @@ const Contacto = () => {
   const callApi = async (e) => {
     e.preventDefault();
 
-    const url = "https://formsubmit.co/ajax/emprende.programa@gmail.com"
+    const url = "https://formsubmit.co/ajax/691ff4ce3e2535570558b9fb72b18b05"
 
     const params = e.target;
 
@@ -92,7 +92,7 @@ const Contacto = () => {
         <div className="container">
           <h2>¡Hagamos esto juntos!</h2>
           <p className="subtitulo">Contanos cómo querés apoyar.</p>
-          <form action={url}>
+          <form onSubmit={callApi}>
             <h4><b>Envianos un mensaje</b></h4>
             <div className="separator">
               <input type="text" placeholder="Nombre" name="nombre" />
